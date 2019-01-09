@@ -16,51 +16,53 @@ This course takes oplace in the 1-month trainng "Diplôme Universitaire en Bioin
 
 4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
-### Calendrier 2019
+### 2019 Calendar
 
 Calendrier du DUBii : <https://goo.gl/MVEA4q>
 
-### Accès aux supports de cours
+### Access to training material
 
 - Web: <https://du-bii.github.io/DUBii-6-integrative-bioinformatics/>
 - Github (sources): <https://github.com/DU-Bii/DUBii-6-integrative-bioinformatics/>
 
-#### Cloner le cours sur votre propre ordinateur
+#### Cloner this course on your own computer
 
-Pour les **participants**
+**Non-members** of the teacher team. 
 
 ```{bash}
 git clone https://github.com/DU-Bii/DUBii-6-integrative-bioinformatics.git
 ```
 
-Pour les **contributeurs du cours** (requiert de faire partie de l'équipe *module3-R* de l'organisation github *DU-Bii*)
+**Members of the teacher team**
 
 ```{bash}
 git clone git@github.com:DU-Bii/DUBii-6-integrative-bioinformatics.git
 ```
 
 
-## Compétences attendues à la fin du module
+## Skills acquired during this course
 
-A la fin du module, les participants auront acquis les compétences suivantes:
+At the end of this course, trainees should be able to do the following: $
+
+- ...
 
 
-## Concepts  à couvrir
+## Concepts covered
 
 - ....
 
 ## Synopsis
 
-### Séance 1: 
+### Course 1: 
 
-### Séance 2: 
+### Course 2: 
 
-### Séance 3: 
+### Course 3: 
 
-### Séance 4: 
+### Course 4: 
 
-### Séance 5: 
+### Course 5: 
 
-### Séance 6: 
+### Course 6: 
 
 
