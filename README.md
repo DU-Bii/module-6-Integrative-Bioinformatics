@@ -84,7 +84,7 @@ Datasets: metabolomics + NGS data from metagenomics
 
 ### Course 5: WGCNA, network inference
 
-*Teachers: Anaïs Baudot and Costas Bouyioukos*
+*Teachers: Costas Bouyioukos and Anaïs Baudot*
 
 - Intro inferring networks from *omics data.
 - Intro to clustering for GRNs.
