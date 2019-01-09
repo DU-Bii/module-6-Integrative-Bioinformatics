@@ -1,37 +1,66 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/DU-Bii/module6_integrative-bioinformatics/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# DUBii module 6 : Integrative Bioinformatics
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## Informations
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This course takes oplace in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" (DUBII) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
 
-```markdown
-Syntax highlighted code block
+### Course coordinators
 
-# Header 1
-## Header 2
-### Header 3
+1. AnaÏs Baudot, CNRS, Marseille
+2. Bertrand Cosson, Université Paris-Diderot, Paris
+3. Costas Bouyioukos
 
-- Bulleted
-- List
+### Other teachers
 
-1. Numbered
-2. List
+4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
-**Bold** and _Italic_ and `Code` text
+### Calendrier 2019
 
-[Link](url) and ![Image](src)
+Calendrier du DUBii : <https://goo.gl/MVEA4q>
+
+### Accès aux supports de cours
+
+- Web: <https://du-bii.github.io/DUBii-6-integrative-bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/DUBii-6-integrative-bioinformatics/>
+
+#### Cloner le cours sur votre propre ordinateur
+
+Pour les **participants**
+
+```{bash}
+git clone https://github.com/DU-Bii/DUBii-6-integrative-bioinformatics.git
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Pour les **contributeurs du cours** (requiert de faire partie de l'équipe *module3-R* de l'organisation github *DU-Bii*)
 
-### Jekyll Themes
+```{bash}
+git clone git@github.com:DU-Bii/DUBii-6-integrative-bioinformatics.git
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DU-Bii/module6_integrative-bioinformatics/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+## Compétences attendues à la fin du module
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+A la fin du module, les participants auront acquis les compétences suivantes:
+
+
+## Concepts  à couvrir
+
+- ....
+
+## Synopsis
+
+### Séance 1: 
+
+### Séance 2: 
+
+### Séance 3: 
+
+### Séance 4: 
+
+### Séance 5: 
+
+### Séance 6: 
+
+
