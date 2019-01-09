@@ -53,16 +53,59 @@ At the end of this course, trainees should be able to do the following: $
 
 ## Synopsis
 
-### Course 1: 
+### Course 1: Functional interpretation of gene sets
 
-### Course 2: 
+*Teachers: Jacques van Helden and ?*
 
-### Course 3: 
+### Course 2: multi-multidimensional approaches
 
-### Course 4: 
+*Teachers: to be confirmed*
 
-### Course 5: 
+Datasets: TCGA data ? 
 
-### Course 6: 
+### Course 3: multi-multidimensional approaches
+
+*Teachers: to be confirmed*
+
+Datasets: metabolomics + NGS data from metagenomics
+
+### Course 4: Network Analysis with Cytoscape, session I
+
+*Teachers: Anaïs Baudot and Costas Bouyioukos*
+
+- Introduction to network sciences in biology (~ 30 minutes)
+- Practical, part A (~ 90 minutes)
+    - improve the first part of Anais’s TP
+- Practical, part B 
+    - improve Costas TP 
+    - Dataset: bacterial regulons
+    - Topics: topological analysis of networks
+
+
+### Course 5: WGCNA, network inference
+
+*Teachers: Anaïs Baudot and Costas Bouyioukos*
+
+- Intro inferring networks from *omics data.
+- Intro to clustering for GRNs.
+- Intro to eigen decomposition (eigenvalues, eigenvectors)
+- Thresholding correlation matrices.
+- Visualization of the network and interactions.
+- Refinement of network topology by using a smart thresholding technique with concept of eigengene. 
+- Closing by mentioning Inferelator and cMonkey combined network inference by RNA-seq and Chip-Seq.
+
+
+### Course 6: Network Analysis with Cytoscape, session II
+
+*Teachers: Anaïs Baudot and Costas Bouyioukos*
+
+- Short intro to network measures (graphical explanation)
+- Guilt by association algorithms, clustering for community identification and random walks
+- Multiplex / multiscale
+- Integration of expression data into networks, jActive module
+- Integration of ontologies
+- Cytoscape apps
+- Integration of different types of interactions, miRNA and mRNA transcription, combine.
+(For Costas to verify PPI and RNA-Seq integration?)
 
 
