@@ -22,21 +22,21 @@ Calendrier du DUBii : <https://goo.gl/MVEA4q>
 
 ### Access to training material
 
-- Web: <https://du-bii.github.io/DUBii-6-Integrative-bioinformatics/>
-- Github (sources): <https://github.com/DU-Bii/DUBii-6-Integrative-bioinformatics/>
+- Web: <https://du-bii.github.io/DUBii-6-Integrative-Bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics/>
 
 #### Cloner this course on your own computer
 
 **Non-members** of the teacher team. 
 
 ```{bash}
-git clone https://github.com/DU-Bii/DUBii-6-integrative-bioinformatics.git
+git clone https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics.git
 ```
 
 **Members of the teacher team**
 
 ```{bash}
-git clone git@github.com:DU-Bii/DUBii-6-integrative-bioinformatics.git
+git clone git@github.com:DU-Bii/DUBii-6-Integrative-Bioinformatics.git
 ```
 
 
