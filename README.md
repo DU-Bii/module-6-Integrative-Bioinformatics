@@ -1,57 +1,31 @@
 
-# DUBii module 6 : Integrative Bioinformatics
+# [DUBii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
+
+----------------------------------------------------------------
+
+## Description
+
+This course takes place in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" ([DUBII](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
 
 
-## Informations
 
-This course takes oplace in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" (DUBII) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
-
-### Course coordinators
-
-1. AnaÏs Baudot, CNRS, Marseille
-2. Bertrand Cosson, Université Paris-Diderot, Paris
-3. Costas Bouyioukos
-
-### Other teachers
-
-4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
-
-### 2019 Calendar
-
-Calendrier du DUBii : <https://goo.gl/MVEA4q>
-
-### Access to training material
-
-- Web: <https://du-bii.github.io/DUBii-6-Integrative-Bioinformatics/>
-- Github (sources): <https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics/>
-
-#### Cloner this course on your own computer
-
-**Non-members** of the teacher team. 
-
-```{bash}
-git clone https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics.git
-```
-
-**Members of the teacher team**
-
-```{bash}
-git clone git@github.com:DU-Bii/DUBii-6-Integrative-Bioinformatics.git
-```
-
-
-## Skills acquired during this course
+### Skills acquired during this course
 
 At the end of this course, trainees should be able to do the following: $
 
 - ...
 
 
-## Concepts covered
+### Concepts covered
 
 - ....
 
-## Synopsis
+
+(For Costas to verify PPI and RNA-Seq integration?)
+
+
+----------------------------------------------------------------
+## Table of contents
 
 ### Course 1: Functional interpretation of gene sets
 
@@ -106,6 +80,55 @@ Datasets: metabolomics + NGS data from metagenomics
 - Integration of ontologies
 - Cytoscape apps
 - Integration of different types of interactions, miRNA and mRNA transcription, combine.
-(For Costas to verify PPI and RNA-Seq integration?)
 
+----------------------------------------------------------------
+
+## 2019 Calendar
+
+Calendrier du DUBii : <https://goo.gl/MVEA4q>
+
+----------------------------------------------------------------
+
+## Credits
+
+### Course coordinators
+
+1. AnaÏs Baudot, CNRS, Marseille
+2. Bertrand Cosson, Université Paris-Diderot, Paris
+3. Costas Bouyioukos
+
+### Other teachers
+
+4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
+
+----------------------------------------------------------------
+
+## Access to training material
+
+- Web: <https://du-bii.github.io/DUBii-6-Integrative-Bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics/>
+
+### To clone this course on your own computer
+
+**Non-members** of the teacher team. 
+
+```{bash}
+git clone https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics.git
+```
+
+**Members of the teacher team**
+
+```{bash}
+git clone git@github.com:DU-Bii/DUBii-6-Integrative-Bioinformatics.git
+```
+
+
+## License
+
+![](img/CC-BY-SA.png)
+
+
+This content is released under the [Creative Commons Attribution-ShareAlike 4.0 ](https://creativecommons.org/licenses/by-sa/4.0/deed.en) (CC BY-SA 4.0) license. See the bundled [LICENSE](LICENSE.txt) file for details.
+
+Ce contenu est mis à disposition selon les termes de la licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0). Consultez le fichier [LICENSE](LICENSE.txt) pour plus de détails.
 
