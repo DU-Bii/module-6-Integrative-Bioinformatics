@@ -1,5 +1,5 @@
 
-# DUBii module 6 : Integrative Bioinformatics
+# [DUBii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
 
 
 ## Informations
