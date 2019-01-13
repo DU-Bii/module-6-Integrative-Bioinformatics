@@ -1,11 +1,11 @@
 
-# [DUBii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
+# [DU-Bii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
 
 ----------------------------------------------------------------
 
 ## Description
 
-This course takes place in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" ([DUBII](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
+This course takes place in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
 
 
 
@@ -85,7 +85,7 @@ Datasets: metabolomics + NGS data from metagenomics
 
 ## 2019 Calendar
 
-Calendrier du DUBii : <https://goo.gl/MVEA4q>
+Calendrier du DU-Bii : <https://goo.gl/MVEA4q>
 
 ----------------------------------------------------------------
 
@@ -105,21 +105,21 @@ Calendrier du DUBii : <https://goo.gl/MVEA4q>
 
 ## Access to training material
 
-- Web: <https://du-bii.github.io/DUBii-6-Integrative-Bioinformatics/>
-- Github (sources): <https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics/>
+- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
 
-### To clone this course on your own computer
+## Installation
 
-**Non-members** of the teacher team. 
+
+### Contributors (members of the teaching team)
 
 ```{bash}
-git clone https://github.com/DU-Bii/DUBii-6-Integrative-Bioinformatics.git
+git clone git@github.com:DU-Bii/module-6-Integrative-Bioinformatics.git
 ```
-
-**Members of the teacher team**
+### Other people
 
 ```{bash}
-git clone git@github.com:DU-Bii/DUBii-6-Integrative-Bioinformatics.git
+git clone https://github.com/DU-Bii/module-6-Integrative-Bioinformatics.git
 ```
 
 
