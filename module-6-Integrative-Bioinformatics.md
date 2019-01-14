@@ -8,6 +8,10 @@
 This course takes place in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
 
 
+### Pre-requisites
+
+All participants are encouraged to follow the two inroductory videos, read the review and answer to two simple questions for comprehension in the Paris Diderot course "Moodle" page.
+<https://moodlesupd.script.univ-paris-diderot.fr/mod/page/view.php?id=167920>
 
 ### Skills acquired during this course
 
@@ -94,7 +98,7 @@ Calendrier du DU-Bii : <https://goo.gl/MVEA4q>
 
 1. AnaÏs Baudot, CNRS, Marseille
 2. Bertrand Cosson, Université Paris-Diderot, Paris
-3. Costas Bouyioukos
+3. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
 
 ### Other teachers
 
