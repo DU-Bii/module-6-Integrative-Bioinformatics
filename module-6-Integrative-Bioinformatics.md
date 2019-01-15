@@ -30,19 +30,20 @@ At the end of this course, trainees should be able to do the following: $
 
 ## Table of contents
 
+
 ### Course 1: Functional interpretation of gene sets
 
-*Teachers: Jacques van Helden and ?*
+*Teachers: Jacques van Helden and Olivier Sand*
 
 ### Course 2: multi-multidimensional approaches
 
-*Teachers: to be confirmed*
+*Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
 Datasets: TCGA data ? 
 
 ### Course 3: multi-multidimensional approaches
 
-*Teachers: to be confirmed*
+*Teachers:  Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
 Datasets: metabolomics + NGS data from metagenomics
 
@@ -86,9 +87,9 @@ Datasets: metabolomics + NGS data from metagenomics
 
 ----------------------------------------------------------------
 
-## 2019 Calendar
+## Planning DU-Bii 2019
 
-Calendrier du DU-Bii : <https://goo.gl/MVEA4q>
+<https://tinyurl.com/dubii19-planning>
 
 ----------------------------------------------------------------
 
