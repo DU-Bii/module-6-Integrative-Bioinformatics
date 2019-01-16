@@ -5,7 +5,7 @@
 
 ## Description
 
-This course takes place in the 1-month trainng "Diplôme Universitaire en Bioinformtaique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
+This course takes place in the 1-month training "Diplôme Universitaire en Bioinformtaique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
 
 
 ### Pre-requisites
