@@ -56,17 +56,25 @@ Enrichment tests:
 Application:
 - Annotation of groups of genes produced by the other courses (e.g. differentially expressed genes from RNA-seq, disease-associated genes, ...)
 
-### Course 2: multi-multidimensional approaches
+### Course 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
-Datasets: TCGA data ? 
+Concepts: 
+- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)
+       - Motivation
+       - Which approach to answer which question (subsetting, modules, pathways) ?
+       - Main methodologies: networks, matrix factorisation
+- Principles of multi-level matrix factorisation (Sébastien Déjean)
+- Kernel-based approaches (Jérôme)
 
-### Course 3: multi-multidimensional approaches
+Practical:
+- mixOmics
+- JM tools (please specify)
 
-*Teachers:  Sébastien Déjean, Jérôme Mariette et Laura Cantini*
-
-Datasets: metabolomics + NGS data from metagenomics
+Datasets: 
+- TCGA
+- metagenomics data (Jérôme Mariette)
 
 ### Course 4: Network Analysis with Cytoscape, session I
 
