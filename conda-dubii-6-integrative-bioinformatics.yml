@@ -1,0 +1,19 @@
+name: dubii19-integrative-bioinformatics
+
+channels:
+  - r
+  - conda-forge
+  - bioconda
+  - lcantini
+
+dependencies:
+
+  ## RCRAN packages
+  - r::r-base  >=3.5,< 3.6
+  - r::r-mixomics
+
+  ## Bioconda
+
+  ## Other packages
+  - lcantini::r-mofa
+
