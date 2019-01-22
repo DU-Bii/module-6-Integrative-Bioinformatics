@@ -10,7 +10,7 @@ This course takes place in the 1-month training "Diplôme Universitaire en Bioin
 
 ### Pre-requisites
 
-All participants are encouraged to follow the two inroductory videos, read the review and answer to two simple questions for comprehension in the Paris Diderot course "Moodle" page.
+All participants are encouraged to follow the two introductory videos, read the review and answer to two simple questions for comprehension in the Paris Diderot course "Moodle" page.
 <https://moodlesupd.script.univ-paris-diderot.fr/mod/page/view.php?id=167920>
 
 ### Skills acquired during this course
@@ -126,7 +126,7 @@ Datasets:
 
 ### Course coordinators
 
-1. AnaÏs Baudot, CNRS, Marseille
+1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
 2. Bertrand Cosson, Université Paris-Diderot, Paris
 3. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
 
