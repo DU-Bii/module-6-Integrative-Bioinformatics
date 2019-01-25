@@ -1,16 +1,17 @@
-name: dubii19-integrative-bioinformatics
+name: dubii19_integrative_bioinfo
 
 channels:
-  - r
   - conda-forge
   - bioconda
   - lcantini
+  - r
+  - default
 
 dependencies:
 
   ## RCRAN packages
-  - r::r-base  >=3.5,< 3.6
-  - r::r-mixomics
+  - conda-forge::r-base  >=3.5,< 3.6
+  - conda-forge::r-mixomics
 
   ## Bioconda
 
