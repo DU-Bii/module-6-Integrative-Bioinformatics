@@ -5,7 +5,7 @@
 
 ## Description
 
-This course takes place in the 1-month training "Diplôme Universitaire en Bioinformatique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB). 
+This course takes place in the 1-month training "Diplôme Universitaire en Bioinformatique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB).
 
 
 ### Pre-requisites
@@ -35,21 +35,21 @@ At the end of this course, trainees should be able to do the following: $
 
 *Teachers: Jacques van Helden and Olivier Sand*
 
-Concepts: 
-- functional annotations, 
-- Gene Ontology, 
+Concepts:
+- functional annotations,
+- Gene Ontology,
 - pathways (metabolic, signaling),
 - biomolecular networks (protein-protein, co-expression, molecular complexes, metabolic reactions)
 
 Resources:
 - databases containing these data types.
 - g:Profiler (Web site + R library)
-- metabolic mapping tools (KEGG pathway coloring). 
+- metabolic mapping tools (KEGG pathway coloring).
 
-Enrichment tests: 
-- goals, 
+Enrichment tests:
+- goals,
 - principles and approaches: enrichment, GSEA, ...
-- statistics (seen in the course Stat with R), 
+- statistics (seen in the course Stat with R),
 - good practices (choice of an appropriate background, multiple testing correction),
 - interpretation of the results)
 
@@ -60,7 +60,7 @@ Application:
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
-Concepts: 
+Concepts:
 - Integrative bioinformatics approaches and their application to cancer (Laura Cantini)
        - Motivation
        - Which approach to answer which question (subsetting, modules, pathways) ?
@@ -72,7 +72,7 @@ Practical:
 - mixOmics
 - JM tools (please specify)
 
-Datasets: 
+Datasets:
 - TCGA
 - metagenomics data (Jérôme Mariette)
 
@@ -80,26 +80,30 @@ Datasets:
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
-- Introduction to network sciences in biology (~ 30 minutes)
+- Introduction to network sciences in biology (~30 minutes)
 - Practical, part A (~ 90 minutes)
     - improve the first part of Anais’s TP
-- Practical, part B 
-    - improve Costas TP 
+- Practical, part B
+    - Costas TP
     - Dataset: bacterial regulons
-    - Topics: topological analysis of networks
+    - Topics: topological analysis and visualisation of networks
 
 
 ### Course 5: WGCNA, network inference
 
 *Teachers: Costas Bouyioukos and Anaïs Baudot*
 
-- Intro inferring networks from *omics data.
+- Intro inferring networks from \*omics data.
 - Intro to clustering for GRNs.
 - Intro to eigen decomposition (eigenvalues, eigenvectors)
 - Thresholding correlation matrices.
-- Visualization of the network and interactions.
-- Refinement of network topology by using a smart thresholding technique with concept of eigengene. 
-- Closing by mentioning Inferelator and cMonkey combined network inference by RNA-seq and Chip-Seq.
+- Refinement of network topology by using smart thresholding techniques,
+  the concept of eigengene.
+- Visualisation of the inferred networks.
+
+ A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
+
+Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
 
 
 ### Course 6: Network Analysis with Cytoscape, session II
@@ -164,4 +168,3 @@ git clone https://github.com/DU-Bii/module-6-Integrative-Bioinformatics.git
 This content is released under the [Creative Commons Attribution-ShareAlike 4.0 ](https://creativecommons.org/licenses/by-sa/4.0/deed.en) (CC BY-SA 4.0) license. See the bundled [LICENSE](LICENSE.txt) file for details.
 
 Ce contenu est mis à disposition selon les termes de la licence [Creative Commons Attribution - Partage dans les Mêmes Conditions 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) (CC BY-SA 4.0). Consultez le fichier [LICENSE](LICENSE.txt) pour plus de détails.
-
