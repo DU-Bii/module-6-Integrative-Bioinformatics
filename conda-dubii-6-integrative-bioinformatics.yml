@@ -1,4 +1,4 @@
-name: dubii19_integrative_bioinfo
+name: dubii_integrative_bioinfo/2019
 
 channels:
   - conda-forge
