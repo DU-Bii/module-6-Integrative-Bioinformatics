@@ -2,10 +2,7 @@ name: du_bii_m6_integrative_bioinfo-2019
 
 channels:
   - conda-forge
-  - bioconda
   - lcantini
-  - r
-  - default
 
 dependencies:
 
