@@ -1,6 +1,7 @@
 name: du_bii_m6_integrative_bioinfo-2019
 
 channels:
+  - bioconda
   - conda-forge
   - lcantini
 
@@ -9,7 +10,7 @@ dependencies:
   ## RCRAN packages
   - conda-forge::r-base  >=3.5,< 3.6
   - conda-forge::r-mixomics
-  - conda-forge::mixKernel
+  - bioconda::r-mixkernel 
 
   ## Bioconda
 
