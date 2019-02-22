@@ -12,6 +12,7 @@ dependencies:
   ## RCRAN packages
   - conda-forge::r-base  >=3.5,< 3.6
   - conda-forge::r-mixomics
+  - conda-forge::mixKernel
 
   ## Bioconda
 
