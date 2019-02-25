@@ -10,7 +10,7 @@ This course takes place in the 1-month training "Diplôme Universitaire en Bioin
 
 ### Pre-requisites
 
-All participants are encouraged to follow the two introductory videos, read the review and answer to two simple questions for comprehension in the Paris Diderot course "Moodle" page.
+All participants are encouraged to follow the two introductory videos and read the review in the Paris Diderot course "Moodle" page.
 <https://moodlesupd.script.univ-paris-diderot.fr/mod/page/view.php?id=167920>
 
 ### Skills acquired during this course
@@ -80,27 +80,27 @@ Datasets:
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
-- Introduction to network sciences in biology (~30 minutes)
-- Practical, part A (~ 90 minutes)
-    - improve the first part of Anais’s TP
-- Practical, part B
-    - Costas TP
-    - Dataset: bacterial regulons
-    - Topics: topological analysis and visualisation of networks
+- Introduction to network sciences in biology
+- Practical with Cytoscape
+    - Basics on human interactome
+    - Basics on bacterial regulons
+    - Keywords: interactome, regumone, network visualisation and topological analyses
 
 
 ### Course 5: WGCNA, network inference
 
 *Teachers: Costas Bouyioukos and Anaïs Baudot*
 
-- Intro inferring networks from \*omics data.
-- Intro to clustering for GRNs.
+- Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks
+<!--
 - Intro to eigen decomposition (eigenvalues, eigenvectors)
 - Thresholding correlation matrices.
 - Refinement of network topology by using smart thresholding techniques,
   the concept of eigengene.
-- Visualisation of the inferred networks.
-
+-->
+- Practical with R
+       - Inferrence of co-expression networks with the WGCNA package
+       
  A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
 
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
@@ -110,13 +110,13 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
-- Short intro to network measures (graphical explanation)
-- Guilt by association algorithms, clustering for community identification and random walks
-- Multiplex / multiscale
-- Integration of expression data into networks, jActive module
-- Integration of ontologies
+- Introduction to Network algorithms (measures, guilt-by-association, clustering)
 - Cytoscape apps
-- Integration of different types of interactions, miRNA and mRNA transcription, combine.
+- Integration of different types of interactions, miRNA and mRNA transcription
+- Practical with Cytoscape
+       - Integrating knowledge in networks: Enrichmap
+       - Integrating expression data in networks: jActive module
+       - Integrating networks: multiplex networks
 
 ----------------------------------------------------------------
 
