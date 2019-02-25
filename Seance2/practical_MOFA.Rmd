@@ -1,0 +1,253 @@
+
+---
+    title: " Vignette illustrating the use of MOFA on the CLL data"
+---
+    
+This vignette is adapted from the one provided with the MOFA publication ("Argelaguet, Ricard, et al. "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets." Molecular systems biology 14.6 (2018): e8124."") for further details refer to it.
+    
+The use of MOFA is here organized into: initialization, training and down-stream analyses. The data employed are the CLL data which is used in the MOFA publication.
+
+```{r, warning=FALSE, message=FALSE}
+library(MOFAtools)
+```
+
+# Step 1: Load data 
+
+The multi-omic data input of MOFA need to be organized into a list of matrices where features are rows and samples are columns. Importantly, the samples need to be aligned. Missing values/assays should be filled with NAs.
+```{r}
+data("CLL_data")
+MOFAobject <- createMOFAobject(CLL_data)
+MOFAobject
+```
+
+## Overview of training data
+The function `plotTilesData` can be used to obtain an overview of the data stored in the object for training. For each sample it shows in which views data are available. The rows are the different views and columns are samples. Missing values are indicated by a grey bar.
+```{r}
+plotTilesData(MOFAobject)
+```
+
+# Step 2: Fit the MOFA model
+## Define options
+
+### Define data options
+The most important options the user needs to define are:  
+    
+* **scaleViews**: logical indicating whether to scale views to have unit variance. As long as the scale of the different data sets is not too high, this is not required. Default is `FALSE`.  
+
+* **removeIncompleteSamples**: logical indicating whether to remove samples that are not profiled in all omics. The model can cope with missing assays, so this option is not required. Default is `FALSE`.  
+
+```{r}
+DataOptions <- getDefaultDataOptions()
+DataOptions 
+```
+
+### Define model options
+Next, we define model options. The most important are:  
+    
+* **numFactors**: number of factors (default is 0.5 times the number of samples). By default, the model will only remove a factor if it explains exactly zero variance in the data. You can increase this threshold on minimum variance explained by setting `TrainOptions$dropFactorThreshold` to a value higher than zero.  
+
+* **likelihoods**: likelihood for each view. Usually we recommend gaussian for continuous data, bernoulli for binary data and poisson for count data. By default, the model tries to guess it from the data.  
+
+* **sparsity**: do you want to use sparsity? This makes the interpretation easier so it is recommended (Default is `TRUE`).  
+```{r}
+ModelOptions <- getDefaultModelOptions(MOFAobject)
+ModelOptions$numFactors <- 25
+ModelOptions
+```
+
+### Define training options
+Next, we define training options. The most important are:  
+    
+* **maxiter**: maximum number of iterations. Ideally set it large enough and use the convergence criterion `TrainOptions$tolerance`.  
+
+* **tolerance**: convergence threshold based on change in the evidence lower bound. For an exploratory run you can use a value between 1.0 and 0.1, but for a "final" model we recommend a value of 0.01.  
+
+* **DropFactorThreshold**: hyperparameter to automatically learn the number of factors based on a minimum variance explained criteria. Factors explaining less than `DropFactorThreshold` fraction of variation in all views will be removed. For example, a value of 0.01 means that factors that explain less than 1\% of variance in all views will be discarded. By default this it zero, meaning that all factors are kept unless they explain no variance at all.  
+
+```{r}
+TrainOptions <- getDefaultTrainOptions()
+# Automatically drop factors that explain less than 2% of variance in all omics
+TrainOptions$DropFactorThreshold <- 0.02
+TrainOptions$seed <- 2017
+TrainOptions
+```
+
+## Prepare MOFA
+`prepareMOFA` internally performs a set of sanity checks and fills the `DataOptions`, `TrainOptions` and `ModelOptions` slots of the `MOFAobject`
+```{r}
+MOFAobject <- prepareMOFA(
+    MOFAobject, 
+    DataOptions = DataOptions,
+    ModelOptions = ModelOptions,
+    TrainOptions = TrainOptions
+)
+```
+
+## Run MOFA
+Now we are ready to train the `MOFAobject`, which is done with the function `runMOFA`. This step can take some time (around 15 min with default parameters). For illustration we provide an existing trained `MOFAobject`.  
+
+```{r, eval=FALSE}
+MOFAobject <- runMOFA(MOFAobject)
+```
+
+If the running takes too long....
+```{r}
+# Loading an existing trained model
+filepath <- system.file("extdata", "CLL_model.hdf5",
+                        package = "MOFAtools")
+MOFAobject <- loadModel(filepath, MOFAobject)
+MOFAobject
+```
+
+
+# Step 3: Analyse a trained MOFA model
+After training, we can explore the results from MOFA. 
+
+## Part 1: Disentangling the heterogeneity: calculation of variance explained by each factor in each view
+This is done by `calculateVarianceExplained` (to get the numerical values) and `plotVarianceExplained` (to get the plot). The resulting figure gives an overview of which factors are active in which view(s). If a factor is active in more than one view, this means that is capturing shared signal (co-variation) between features of different data modalities.  
+Here, for example Factor 1 is active in all data modalities, while Factor 4 is specific to mRNA.
+```{r}
+# Calculate the variance explained (R2) per factor in each view 
+r2 <- calculateVarianceExplained(MOFAobject)
+r2$R2Total
+# Variance explained by each factor in each view
+head(r2$R2PerFactor)
+# Plot it
+plotVarianceExplained(MOFAobject)
+```
+
+## Part 2: Characterisation of individual factors
+### Inspection of top weighted features in the active views
+To explore a given factor in more detail we can  plot all weights for a single factor using the `plotWeights` function.
+For example, here we plot all weights from Factor 1 in the Mutation data. With `nfeatures` we can set how many features should be labelled (`manual` let's you specify feautres manually to be labelled in the plot.)
+```{r}
+plotWeights(
+  
+  MOFAobject, 
+
+  view = "Mutations", 
+  
+  factor = 1, 
+  
+  nfeatures = 5
+
+)
+```  
+                                                                                                                                Features with large (absolute) weight on a given factor follow the pattern of covariation associated with the factor.  In our case, this reveals a strong link to the IGHV status, hence recovering an important clinical marker in CLL (see our paper for details on the biological interpretation.) Note that the sign of the weight can only be interpreted relative to the signs of other weights and the factor values.  
+
+If you are only interested in looking at only the top features you can use the `plotTopWeights` function.  
+
+From the previous plots, we can clearly see that Factor 1 is associated to IGHV status. As the variance decomposition above told us that this factor is also relevant on all the other data modalities we can investigate its weights on other modalities, e.g. mRNA, to make connections of the IGHV-linked axes of variation to other molecular layers.
+                                                                                                                                   
+```{r}
+plotTopWeights(MOFAobject, "mRNA", 1)
+```
+                                                                                                                                      
+### Feature set enrichment analysis in the active views
+                                                                                                                                   
+Sometimes looking at the loadings of single features can be challenging, and often the combination of signal from functionally related sets of features (i.e. gene ontologies) is required.  
+
+To have an overview of the biological processes associated to the various factors run feature set enrichment analysis method (`runEnrichmentAnalysis`) derived from the [PCGSE package](https://cran.r-project.org/web/packages/PCGSE/index.html).  
+                                                                                                                                            
+The input of this function is a MOFA trained model (MOFAmodel), the factors for which to perform feature set enrichment (a character vector), the feature sets (a binary matrix) and a set of options regarding how the analysis should be performed, see also documentation of `runEnrichmentAnalysis`
+                                                                                                                                   Let's consider [reactome](http://reactome.org) annotations, which are contained in the package. 
+                                                                                                                                   
+```{r}
+# Load reactome annotations
+# binary matrix with feature sets in rows and feautres in columns
+
+data("reactomeGS")
+
+# perform enrichment analysis
+fsea.out <- runEnrichmentAnalysis(
+  
+  MOFAobject,
+  
+  view = "mRNA",
+  
+  feature.sets = reactomeGS,
+  
+  alpha = 0.01
+
+)
+```
+                                                                                                                                            
+The next step is to visualise the results of the Gene Set Enrichment Analysis. There are two default plots:  
+  
+  (a) General Overview: Barplot with number of enriched gene sets per view
+```{r}
+plotEnrichmentBars(fsea.out, alpha=0.01)
+```
+
+
+From this we find enriched at a FDR of 1% gene sets on Factors 3-6 and 8. To look into which gene sets these are we can choose a factor of interest and visualize the most enriched gene sets as follows:  
+                                                                                                                                            
+(b) Factor-specific:
+```{r}
+interestingFactors <- 4:5
+for (factor in interestingFactors) {
+  lineplot <- plotEnrichment(MOFAobject,
+  fsea.out,
+  factor = factor,
+  alpha = 0.01,
+  max.pathways = 10)
+  
+  print(lineplot)
+}
+```                                                                                                                                
+                                                                                                                                   
+This shows us that Factor 4 is capturing variation related to immune response (possibly due to T-cell contamination of the samples) and Factor 5 is related to differences in stress response, as discussed in our paper.
+
+                                                                                                                                            
+## Ordination of samples by factors to reveal clusters and gradients in the sample space
+                                                                                                                                            
+Samples can be visualized along factors of interest using the `plotFactorScatter` function. We can use features included in the model (such as IGHV or trisomy12) to color or shape the samples by. Alternatively, external covariates can also be used fot this purpose.
+```{r}
+plotFactorScatter(MOFAobject,
+  factors = 1:2,
+  color_by = "IGHV",
+  shape_by = "trisomy12")
+```                                                                                                                               
+                                                                                                                                   Here we find again a clear separation of samples based on their IGHV status (color) along Factor 1 and by the absence or prescence of trisomy 12 (shape) along Factor 2 as indicated by the corresponding factor weights in the Mutations view.  
+
+ An overview of pair-wise sctterplots for all or a subset of factors is produced by the `plotFactorScatters` function
+
+```{r}
+plotFactorScatters(MOFAobject,
+  factors = 1:3,
+  color_by = "IGHV")
+```
+                                                                                                                                            
+A single factor can be visualised using the `plotFactorBeeswarm` function
+                                                                                                                                   
+```{r}
+plotFactorBeeswarm(MOFAobject,
+  factors = 1,
+  color_by = "IGHV")
+```
+                                                                                                                                            
+
+# Further functionalities 
+## Imputation of missing observations
+The `impute` function all missing values are imputed based on the MOFA model. The imputed data is then stored in the `ImputedData slot` of the MOFAobject and can be accessed via the `getImputedData` function.
+
+```{r}
+MOFAobject <- impute(MOFAobject)
+  imputedDrugs <- getImputedData(MOFAobject,
+  view="Drugs")
+```
+                                                                                                                                            
+## Clustering of samples based on latent factors
+Samples can be clustered according to their values on some or all latent factors using the `clusterSamples` function. Clusters can for example be visualised using the `plotFactorScatters` function
+
+```{r}
+clusters <- clusterSamples(MOFAobject,
+  k=2,
+  factors=1)
+
+plotFactorScatter(MOFAobject,
+  factors=1:2,
+  color_by=clusters)
+```
+                                                                                                                                            
+                                                                                                                                            
