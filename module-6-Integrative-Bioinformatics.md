@@ -60,7 +60,7 @@ Application:
 
 ### Course 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
 
-[Présentation Laura Cantini](Seance2/Cantini_DU-Bii_module6.pdf)
+[Présentation Laura Cantini](Cantini_DU-Bii_module6.pdf)
 
 [Présentation Sébastien Dejean et Jérôme Mariette](Seance2/DUBii_SD_JM.pdf)
 
