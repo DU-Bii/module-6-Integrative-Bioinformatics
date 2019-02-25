@@ -9,10 +9,10 @@ channels:
 dependencies:
 
   ## RCRAN packages
-  - bioconda::bioconductor-mixomics=6.6.0
-  - bioconda::r-mixkernel=0.3
-  - conda-forge::r-gprofiler    # functional enrichment 
+  - bioconda::r-mixkernel=0.3  - conda-forge::r-gprofiler    # functional enrichment 
 
   ## Other packages
-  - lcantini::r-mofa
+  - bioconda::bioconductor-mixomics=6.6.0
 
+  ## lcantini
+  - lcantini::r-mofa
