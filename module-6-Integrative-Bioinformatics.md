@@ -33,7 +33,7 @@ At the end of this course, trainees should be able to do the following: $
 
 ### Course 1: Functional interpretation of gene sets
 
-[Présentation](https://du-bii.github.io/module-6-Integrative-Bioinformatics/Seance1/DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
+[Présentation](seance1/index.html)
 
 *Teachers: Jacques van Helden and Olivier Sand*
 
