@@ -87,7 +87,7 @@ Concepts:
        - Which approach to answer which question (subsetting, modules, pathways) ?
        - Main methodologies: networks, matrix factorisation
 - Principles of multi-level matrix factorisation (Sébastien Déjean)
-- Kernel-based approaches (Jérôme)
+- Kernel-based approaches (Jérôme Mariette)
 
 Practical:
 - mixOmics
