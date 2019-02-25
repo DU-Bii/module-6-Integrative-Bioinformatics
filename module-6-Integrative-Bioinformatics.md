@@ -61,13 +61,21 @@ Application:
 ### Course 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
 
 [Présentation Laura Cantini](Seance2/Cantini_DU-Bii_module6.pdf)
+
 [Présentation Sébastien Dejean et Jérôme Mariette](Seance2/DUBii_SD_JM.pdf)
+
 [Présentation MixOmics](Seance2/slide_mixOmics_2018.pdf)
+
 [Practical MOFA (html)](Seance2/practical_MOFA.html)
+
 [Practical MOFA (Rmd)](Seance2/practical_MOFA.Rmd)
+
 [Practical mixKernel (html)](Seance2/TP_mixKernel_DUBii.html)
+
 [Practical mixKernel (Rmd)](Seance2/TP_mixKernel_DUBii.Rmd)
+
 [Practical mixOmics (Rmd)](Seance2/vignette_mixOmics.rmd)
+
 [Practical mixOmics (R)](Seance2/TP_mixOmics_DUBii.R)
 
 
