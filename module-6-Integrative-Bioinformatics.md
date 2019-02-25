@@ -33,6 +33,8 @@ At the end of this course, trainees should be able to do the following: $
 
 ### Course 1: Functional interpretation of gene sets
 
+[Présentation](seance1/index.html)
+
 *Teachers: Jacques van Helden and Olivier Sand*
 
 Concepts:
