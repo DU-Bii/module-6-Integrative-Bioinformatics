@@ -7,17 +7,36 @@ This vignette is adapted from the one provided with the MOFA publication ("Argel
     
 The use of MOFA is here organized into: initialization, training and down-stream analyses. The data employed are the CLL data which is used in the MOFA publication.
 
+# Step 0: RSudio server connection
+
+- Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
+- Load the MOFA and MOFAdata libraries
+
 ```{r, warning=FALSE, message=FALSE}
-library(MOFAtools)
+library(MOFA)
+library(MOFAdata)
 ```
 
 # Step 1: Load data 
 
 The multi-omic data input of MOFA need to be organized into a list of matrices where features are rows and samples are columns. Importantly, the samples need to be aligned. Missing values/assays should be filled with NAs.
+
 ```{r}
+## Load the Chronic Lymphoblastic Leukemia data (which comes with the MOFAdata package)
 data("CLL_data")
+
+## Check the structure of the CLL_data object
+class(CLL_data) # it is a simple R list
+names(CLL_data) # Contains 4 data types
+dim(CLL_data$Drugs) # Dimensions of the Drugs matrix
+
+## Create an object of class MOFAmodel, which will be used below to run MOFA methods
 MOFAobject <- createMOFAobject(CLL_data)
-MOFAobject
+class(MOFAobject)  # The resulting object belongs to the class MOFAmodel
+methods(MOFAmodel) # Get the methods associated to this object
+
+print(MOFAobject) # Print a summary of the MOFA object
+
 ```
 
 ## Overview of training data
