@@ -64,8 +64,7 @@ Application:
 |--------------------------------------------------|------|------|-----|-----|
 | Presentation Laura Cantini |  | [Slides](Seance2/Cantini_DU-Bii_module6.pdf) |  |
 | Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Seance2/DUBii_SD_JM.pdf) |  |
-| Presentation MixOmics |  | [Slides](Seance2/slide_mixOmics_2018.pdf) |  |
-| Practical MixOmics |  |  |  | [R](Seance2/TP_mixOmics_DUBii.R)  |
+| MixOmics |  | [Slides](Seance2/slide_mixOmics_2018.pdf) |  | [R](Seance2/TP_mixOmics_DUBii.R) |
 | Practical MOFA | [html](Seance2/practical_MOFA.html) |  | [Rmd](Seance2/practical_MOFA.Rmd) |
 | Practical mixKernel | [html](Seance2/TP_mixKernel_DUBii.html) |  | [Rmd](Seance2/TP_mixKernel_DUBii.Rmd) |
 
