@@ -1,11 +1,11 @@
 ---
 title: "mixOmics"
 author: 
-- name:  Kim-Anh Lê Cao
+- name:  Kim-Anh LÃª Cao
   affiliation: Melbourne Integrative Genomics, School of Mathematics and Statistics, The University of Melbourne, Australia
   email: mixomics@math.univ-toulouse.fr
-- name: Sébastien Déjean
-  affiliation: Institut de Mathématiques de Toulouse, UMR 5219, CNRS and Université de Toulouse, France
+- name: SÃ©bastien DÃ©jean
+  affiliation: Institut de MathÃ©matiques de Toulouse, UMR 5219, CNRS and UniversitÃ© de Toulouse, France
 
 
 package: mixOmics
