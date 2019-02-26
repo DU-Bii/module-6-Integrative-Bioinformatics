@@ -71,7 +71,7 @@ print(MOFAobject)
 The function `plotTilesData` can be used to obtain an overview of the data stored in the object for training. For each sample it shows in which views data are available. The rows are the different views and columns are samples. Missing values are indicated by a grey bar.
 
 ```{r}
-plotTilesData(MOFAobject)
+# plotTilesData(MOFAobject)
 ```
 
 # Step 2: Fit the MOFA model
@@ -140,7 +140,8 @@ Now we are ready to train the `MOFAobject`, which is done with the function `run
 MOFAobject <- runMOFA(MOFAobject)
 ```
 
-If the running takes too long....
+If the running takes too long..
+..
 ```{r}
 # Loading an existing trained model
 filepath <- system.file("extdata", "CLL_model.hdf5",
@@ -151,6 +152,7 @@ MOFAobject
 
 
 # Step 3: Analyse a trained MOFA model
+
 After training, we can explore the results from MOFA. 
 
 ## Part 1: Disentangling the heterogeneity: calculation of variance explained by each factor in each view
@@ -297,8 +299,8 @@ clusters <- clusterSamples(MOFAobject,
   factors=1)
 
 plotFactorScatter(MOFAobject,
-  factors=1:2,
-  color_by=clusters)
+  factors = 1:2,
+  color_by = clusters)
 ```
                                                                                                                                             
                                                                                                                                             
