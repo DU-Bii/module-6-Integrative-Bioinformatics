@@ -1,4 +1,3 @@
-
 ---
     title: " Vignette illustrating the use of MOFA on the CLL data"
 ---
