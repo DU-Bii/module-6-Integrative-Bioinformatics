@@ -78,7 +78,7 @@ Application:
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
 Concepts:
-- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)
+- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)  
        - Motivation  
        - Which approach to answer which question (subsetting, modules, pathways) ?  
        - Main methodologies: networks, matrix factorisation  
