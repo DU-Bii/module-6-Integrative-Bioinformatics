@@ -1,7 +1,12 @@
-
 # [DU-Bii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
 
 ----------------------------------------------------------------
+
+## Access to training material
+
+- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
+
 
 ## Description
 
@@ -62,11 +67,11 @@ Application:
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | [Slides](Seance2/Cantini_DU-Bii_module6.pdf) |  |
-| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Seance2/DUBii_SD_JM.pdf) |  |
-| MixOmics |  | [Slides](Seance2/slide_mixOmics_2018.pdf) |  | [R](Seance2/TP_mixOmics_DUBii.R) |
-| Practical MOFA | [html](Seance2/practical_MOFA.html) |  | [Rmd](Seance2/practical_MOFA.Rmd) |
-| Practical mixKernel | [html](Seance2/TP_mixKernel_DUBii.html) |  | [Rmd](Seance2/TP_mixKernel_DUBii.Rmd) |
+| Presentation Laura Cantini |  | [Slides](Seance2-3/Cantini_DU-Bii_module6.pdf) |  |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Seance2-3/DUBii_SD_JM.pdf) |  |
+| MixOmics |  | [Slides](Seance2-3/slide_mixOmics_2018.pdf) |  | [R](Seance2-3/TP_mixOmics_DUBii.R) |
+| Practical MOFA | [html](Seance2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Seance2-3/practical_MOFA.Rmd) |
+| Practical mixKernel | [html](Seance2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Seance2-3/TP_mixKernel_DUBii.Rmd) |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
@@ -149,11 +154,6 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 ----------------------------------------------------------------
-
-## Access to training material
-
-- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
-- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
 
 ## Installation
 
