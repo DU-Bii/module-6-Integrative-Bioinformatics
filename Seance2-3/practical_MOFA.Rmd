@@ -1,5 +1,5 @@
 ---
-    title: " Vignette illustrating the use of MOFA on the CLL data"
+title: ' Vignette illustrating the use of MOFA on the CLL data'
 ---
     
 This vignette is adapted from the one provided with the MOFA publication ("Argelaguet, Ricard, et al. "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets." Molecular systems biology 14.6 (2018): e8124."") for further details refer to it.
@@ -32,7 +32,7 @@ dim(CLL_data$Drugs) # Dimensions of the Drugs matrix
 ## Create an object of class MOFAmodel, which will be used below to run MOFA methods
 MOFAobject <- createMOFAobject(CLL_data)
 class(MOFAobject)  # The resulting object belongs to the class MOFAmodel
-methods(MOFAmodel) # Get the methods associated to this object
+methods(class = "MOFAmodel") # Get the methods associated to this object
 
 # Print a summary of the MOFA object
 print(MOFAobject) 
