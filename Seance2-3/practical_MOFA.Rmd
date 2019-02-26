@@ -6,22 +6,17 @@ This vignette is adapted from the one provided with the MOFA publication ("Argel
     
 The use of MOFA is here organized into: initialization, training and down-stream analyses. The data employed are the CLL data which is used in the MOFA publication.
 
-# Step 0: Loading MOFA libraries
+# Prerequiisite
+
+Before starting this tutorial, you need to dispose of an R session with the MOFA libraries installed. 
 
 ## On the IFB-core-cluster RStudio server
 
-- Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
-- Load the MOFA and MOFAdata libraries
+Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
 
-```{r load_MOFA_libs, warning=FALSE, message=FALSE}
-library(MOFA)
-library(MOFAdata)
-```
+The MOFA libraries are already installed on the IFB core cluster, you can thus skip the next session and load them. 
 
-## On your own machine
-
-        
-### Quick install
+## Installing MOFA libraries on your own machine
 
 Open a shell session in a terminal, and install the python MOFA library which is required by the MOFA R package
 
@@ -37,6 +32,9 @@ devtools::install_github("bioFAM/MOFAdata")
 ```
 
 If you want more details or face a problem, consult the installation instructions on the MOFA github repository: <https://github.com/bioFAM/MOFA>.
+
+
+## Load the MOFA libraries
 
 You can now load the MOFA libraries
 
