@@ -71,7 +71,6 @@ Application:
 [Practical MOFA (Rmd)](Seance2/practical_MOFA.Rmd)  
 [Practical mixKernel (html)](Seance2/TP_mixKernel_DUBii.html)  
 [Practical mixKernel (Rmd)](Seance2/TP_mixKernel_DUBii.Rmd)  
-[Practical mixOmics (Rmd)](Seance2/vignette_mixOmics.Rmd)  
 [Practical mixOmics (R)](Seance2/TP_mixOmics_DUBii.R)  
 
 
