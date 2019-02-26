@@ -6,12 +6,41 @@ This vignette is adapted from the one provided with the MOFA publication ("Argel
     
 The use of MOFA is here organized into: initialization, training and down-stream analyses. The data employed are the CLL data which is used in the MOFA publication.
 
-# Step 0: RSudio server connection
+# Step 0: Loading MOFA libraries
+
+## On the IFB-core-cluster RStudio server
 
 - Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
 - Load the MOFA and MOFAdata libraries
 
-```{r, warning=FALSE, message=FALSE}
+```{r load_MOFA_libs, warning=FALSE, message=FALSE}
+library(MOFA)
+library(MOFAdata)
+```
+
+## On your own machine
+
+        
+### Quick install
+
+Open a shell session in a terminal, and install the python MOFA library which is required by the MOFA R package
+
+```{bash eval=FALSE}
+pip install git+git://github.com/bioFAM/MOFA
+```
+
+Open an R session and run the following commands. 
+
+```{r eval=FALSE}
+devtools::install_github("bioFAM/MOFA")
+devtools::install_github("bioFAM/MOFAdata")
+```
+
+If you want more details or face a problem, consult the installation instructions on the MOFA github repository: <https://github.com/bioFAM/MOFA>.
+
+You can now load the MOFA libraries
+
+```{r load_MOFA_libs, warning=FALSE, message=FALSE}
 library(MOFA)
 library(MOFAdata)
 ```
@@ -194,6 +223,7 @@ fsea.out <- runEnrichmentAnalysis(
 The next step is to visualise the results of the Gene Set Enrichment Analysis. There are two default plots:  
   
   (a) General Overview: Barplot with number of enriched gene sets per view
+
 ```{r}
 plotEnrichmentBars(fsea.out, alpha=0.01)
 ```
