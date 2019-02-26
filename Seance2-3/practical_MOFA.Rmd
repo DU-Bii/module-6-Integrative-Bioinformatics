@@ -35,7 +35,8 @@ MOFAobject <- createMOFAobject(CLL_data)
 class(MOFAobject)  # The resulting object belongs to the class MOFAmodel
 methods(MOFAmodel) # Get the methods associated to this object
 
-print(MOFAobject) # Print a summary of the MOFA object
+# Print a summary of the MOFA object
+print(MOFAobject) 
 
 ```
 
