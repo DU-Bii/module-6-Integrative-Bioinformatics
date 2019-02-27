@@ -4,16 +4,21 @@ channels:
   - conda-forge
   - bioconda
   - lcantini
+  - r
   - default
 
 dependencies:
 
   ## RCRAN packages
-  - bioconda::r-mixkernel=0.3  - conda-forge::r-gprofiler    # functional enrichment 
-
-  ## Other packages
-  - bioconda::bioconductor-mixomics=6.6.0
+  - bioconda::r-mixkernel=0.3
   - bioconda::r-wgcna
+  - conda-forge::r-base  >=3.5
+  - conda-forge::r-gprofiler    # functional enrichment 
+  - r::r-rgl 
 
-  ## lcantini
+  ## Bioconductor packages
+  - bioconda::bioconductor-mixomics=6.6.0
+  
+  ## Other packages
   - lcantini::r-mofa
+
