@@ -1,17 +1,44 @@
 ---
-    title: " Vignette illustrating the use of MOFA on the CLL data"
+title: ' Vignette illustrating the use of MOFA on the CLL data'
 ---
     
 This vignette is adapted from the one provided with the MOFA publication ("Argelaguet, Ricard, et al. "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets." Molecular systems biology 14.6 (2018): e8124."") for further details refer to it.
     
 The use of MOFA is here organized into: initialization, training and down-stream analyses. The data employed are the CLL data which is used in the MOFA publication.
 
-# Step 0: RSudio server connection
+# Prerequiisite
 
-- Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
-- Load the MOFA and MOFAdata libraries
+Before starting this tutorial, you need to dispose of an R session with the MOFA libraries installed. 
 
-```{r, warning=FALSE, message=FALSE}
+## On the IFB-core-cluster RStudio server
+
+Open a connection to the RStudio server: <https://rstudio.cluster.france-bioinformatique.fr/>
+
+The MOFA libraries are already installed on the IFB core cluster, you can thus skip the next session and load them. 
+
+## Installing MOFA libraries on your own machine
+
+Open a shell session in a terminal, and install the python MOFA library which is required by the MOFA R package
+
+```{bash eval=FALSE}
+pip install git+git://github.com/bioFAM/MOFA
+```
+
+Open an R session and run the following commands. 
+
+```{r eval=FALSE}
+devtools::install_github("bioFAM/MOFA")
+devtools::install_github("bioFAM/MOFAdata")
+```
+
+If you want more details or face a problem, consult the installation instructions on the MOFA github repository: <https://github.com/bioFAM/MOFA>.
+
+
+## Load the MOFA libraries
+
+You can now load the MOFA libraries
+
+```{r load_MOFA_libs, warning=FALSE, message=FALSE}
 library(MOFA)
 library(MOFAdata)
 ```
@@ -40,15 +67,19 @@ print(MOFAobject)
 ```
 
 ## Overview of training data
+
 The function `plotTilesData` can be used to obtain an overview of the data stored in the object for training. For each sample it shows in which views data are available. The rows are the different views and columns are samples. Missing values are indicated by a grey bar.
+
 ```{r}
-plotTilesData(MOFAobject)
+# plotTilesData(MOFAobject)
 ```
 
 # Step 2: Fit the MOFA model
+
 ## Define options
 
 ### Define data options
+
 The most important options the user needs to define are:  
     
 * **scaleViews**: logical indicating whether to scale views to have unit variance. As long as the scale of the different data sets is not too high, this is not required. Default is `FALSE`.  
@@ -109,7 +140,8 @@ Now we are ready to train the `MOFAobject`, which is done with the function `run
 MOFAobject <- runMOFA(MOFAobject)
 ```
 
-If the running takes too long....
+If the running takes too long..
+..
 ```{r}
 # Loading an existing trained model
 filepath <- system.file("extdata", "CLL_model.hdf5",
@@ -120,6 +152,7 @@ MOFAobject
 
 
 # Step 3: Analyse a trained MOFA model
+
 After training, we can explore the results from MOFA. 
 
 ## Part 1: Disentangling the heterogeneity: calculation of variance explained by each factor in each view
@@ -194,6 +227,7 @@ fsea.out <- runEnrichmentAnalysis(
 The next step is to visualise the results of the Gene Set Enrichment Analysis. There are two default plots:  
   
   (a) General Overview: Barplot with number of enriched gene sets per view
+
 ```{r}
 plotEnrichmentBars(fsea.out, alpha=0.01)
 ```
@@ -265,8 +299,8 @@ clusters <- clusterSamples(MOFAobject,
   factors=1)
 
 plotFactorScatter(MOFAobject,
-  factors=1:2,
-  color_by=clusters)
+  factors = 1:2,
+  color_by = clusters)
 ```
                                                                                                                                             
                                                                                                                                             
