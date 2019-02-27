@@ -121,17 +121,17 @@ Datasets:
 
 *Teachers: Costas Bouyioukos and Anaïs Baudot*
 
-    - Introduction to gene co-expression networks.
-    - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
-    - Introduction to WGCNA and the concept of eigengene.
+- Introduction to gene co-expression networks.
+- Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
+- Introduction to WGCNA and the concept of eigengene.
 <!--
 - Intro to eigen decomposition (eigenvalues, eigenvectors)
 - Thresholding correlation matrices.
 - Refinement of network topology by using smart thresholding techniques,
   the concept of eigengene.
 -->
-    - Practical with R
-        - Inferrence of co-expression networks with the WGCNA package
+- Practical with R
+    - Inferrence of co-expression networks with the WGCNA package
 
  The document containing all the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](Session5/Network_Inference_with_WGCNA.html)
 
