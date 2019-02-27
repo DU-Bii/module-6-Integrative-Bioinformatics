@@ -1,4 +1,4 @@
-name: dubii19_integrative_bioinfo
+name: du_bii_m6_integrative_bioinfo-2019
 
 channels:
   - conda-forge
@@ -10,11 +10,15 @@ channels:
 dependencies:
 
   ## RCRAN packages
-  - conda-forge::r-base  >=3.5,< 3.6
-  - conda-forge::r-mixomics
+  - conda-forge::r-base  >=3.5
+  - conda-forge::r-gprofiler    # functional enrichment 
+  - bioconda::r-mixkernel=0.3
+  - bioconda::r-wgcna
+  - r::r-rgl 
 
-  ## Bioconda
-
+  ## Bioconductor packages
+  - bioconda::bioconductor-mixomics=6.6.0
+  
   ## Other packages
   - lcantini::r-mofa
 

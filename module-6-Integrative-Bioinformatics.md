@@ -1,7 +1,20 @@
-
 # [DU-Bii](https://du-bii.github.io/accueil/) module 6 : Integrative Bioinformatics
 
 ----------------------------------------------------------------
+
+## Access to training material
+
+- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
+
+
+## Teaching material
+
+| Topics | Trainers  | Access |
+|--------------------------------------------|----------------------------|------------|
+| Introduction to the course + functional annotation of gene sets | Jacques van Helden | [Seance1](Seance1) |
+| Integrating multi-omics data with multi-level matrix factorisation | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Seance2-3](Seance2-3) |
+| Network Analysis with Cytoscape, session I | Anaïs Baudot & Costas Boulyakis | [Seance4](Seance4) |
 
 ## Description
 
@@ -10,7 +23,7 @@ This course takes place in the 1-month training "Diplôme Universitaire en Bioin
 
 ### Pre-requisites
 
-All participants are encouraged to follow the two introductory videos, read the review and answer to two simple questions for comprehension in the Paris Diderot course "Moodle" page.
+All participants are encouraged to follow the two introductory videos and read the review in the Paris Diderot course "Moodle" page.
 <https://moodlesupd.script.univ-paris-diderot.fr/mod/page/view.php?id=167920>
 
 ### Skills acquired during this course
@@ -31,17 +44,21 @@ At the end of this course, trainees should be able to do the following: $
 ## Table of contents
 
 
-### Course 1: Functional interpretation of gene sets
+### Session 1: Functional interpretation of gene sets
+
+[Présentation](Session1/DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
 
 *Teachers: Jacques van Helden and Olivier Sand*
 
 Concepts:
+
 - functional annotations,
 - Gene Ontology,
 - pathways (metabolic, signaling),
 - biomolecular networks (protein-protein, co-expression, molecular complexes, metabolic reactions)
 
 Resources:
+
 - databases containing these data types.
 - g:Profiler (Web site + R library)
 - metabolic mapping tools (KEGG pathway coloring).
@@ -56,67 +73,80 @@ Enrichment tests:
 Application:
 - Annotation of groups of genes produced by the other courses (e.g. differentially expressed genes from RNA-seq, disease-associated genes, ...)
 
-### Course 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
+### Sessions 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
+        
+| Contenu | HTML | pdf | Rmd | R |
+|--------------------------------------------------|------|------|-----|-----|
+| Presentation Laura Cantini |  | [Slides](Session2-3/Cantini_DU-Bii_module6.pdf) |  |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Session2-3/DUBii_SD_JM.pdf) |  |
+| MixOmics |  | [Slides](Session2-3/slide_mixOmics_2018.pdf) |  | [R](Session2-3/TP_mixOmics_DUBii.R) |
+| Practical MOFA | [html](Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/practical_MOFA.Rmd) |
+| Practical mixKernel | [html](Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/TP_mixKernel_DUBii.Rmd) |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
 Concepts:
-- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)
-       - Motivation
-       - Which approach to answer which question (subsetting, modules, pathways) ?
-       - Main methodologies: networks, matrix factorisation
+
+- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)  
+       - Motivation  
+       - Which approach to answer which question (subsetting, modules, pathways) ?  
+       - Main methodologies: networks, matrix factorisation  
 - Principles of multi-level matrix factorisation (Sébastien Déjean)
-- Kernel-based approaches (Jérôme)
+- Kernel-based approaches (Jérôme Mariette)
 
 Practical:
+
 - mixOmics
 - JM tools (please specify)
 
 Datasets:
-- TCGA
+- Chronic Lymphoblastic Leukemia (CLL)
 - metagenomics data (Jérôme Mariette)
 
-### Course 4: Network Analysis with Cytoscape, session I
+### Session 4: Network Analysis with Cytoscape, session I
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
-- Introduction to network sciences in biology (~30 minutes)
-- Practical, part A (~ 90 minutes)
-    - improve the first part of Anais’s TP
-- Practical, part B
-    - Costas TP
-    - Dataset: bacterial regulons
-    - Topics: topological analysis and visualisation of networks
+- Introduction to network sciences in biology
+- Practical with Cytoscape
+    - Basics on human interactome
+    - Basics on bacterial regulons
+    - Keywords: interactome, regumone, network visualisation and topological analyses
+
+- Slides: [SlidesM6S4.pdf](Session4/SlidesM6S4.pdf)
+- Practicals: [TutoM6S4.pdf](Session4/TutoM6S4.pdf)
 
 
-### Course 5: WGCNA, network inference
+### Session 5: WGCNA, network inference
 
 *Teachers: Costas Bouyioukos and Anaïs Baudot*
 
-- Intro inferring networks from \*omics data.
-- Intro to clustering for GRNs.
+- Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks
+<!--
 - Intro to eigen decomposition (eigenvalues, eigenvectors)
 - Thresholding correlation matrices.
 - Refinement of network topology by using smart thresholding techniques,
   the concept of eigengene.
-- Visualisation of the inferred networks.
-
+-->
+- Practical with R
+       - Inferrence of co-expression networks with the WGCNA package
+       
  A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
 
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
 
 
-### Course 6: Network Analysis with Cytoscape, session II
+### Session 6: Network Analysis with Cytoscape, session II
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
-- Short intro to network measures (graphical explanation)
-- Guilt by association algorithms, clustering for community identification and random walks
-- Multiplex / multiscale
-- Integration of expression data into networks, jActive module
-- Integration of ontologies
+- Introduction to Network algorithms (measures, guilt-by-association, clustering)
 - Cytoscape apps
-- Integration of different types of interactions, miRNA and mRNA transcription, combine.
+- Integration of different types of interactions, miRNA and mRNA transcription
+- Practical with Cytoscape
+       - Integrating knowledge in networks: Enrichmap
+       - Integrating expression data in networks: jActive module
+       - Integrating networks: multiplex networks
 
 ----------------------------------------------------------------
 
@@ -131,19 +161,14 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 ### Course coordinators
 
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
-2. Bertrand Cosson, Université Paris-Diderot, Paris
-3. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
+2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
+3. Olivier Sand 
 
 ### Other teachers
 
 4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 ----------------------------------------------------------------
-
-## Access to training material
-
-- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
-- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
 
 ## Installation
 
