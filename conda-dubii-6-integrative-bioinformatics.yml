@@ -10,10 +10,10 @@ channels:
 dependencies:
 
   ## RCRAN packages
-  - bioconda::r-mixkernel=0.3
-  - bioconda::r-wgcna
   - conda-forge::r-base  >=3.5
   - conda-forge::r-gprofiler    # functional enrichment 
+  - bioconda::r-mixkernel=0.3
+  - bioconda::r-wgcna
   - r::r-rgl 
 
   ## Bioconductor packages
