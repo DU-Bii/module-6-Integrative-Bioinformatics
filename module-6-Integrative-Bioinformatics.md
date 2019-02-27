@@ -101,8 +101,8 @@ Datasets:
     - Basics on bacterial regulons
     - Keywords: interactome, regumone, network visualisation and topological analyses
 
-- Slides: (SlidesM6S4.pdf)[Session4/SlidesM6S4.pdf]
-- Practicals: (TutoM6S4.pdf)[Session4/TutoM6S4.pdf]
+- Slides: [SlidesM6S4.pdf](Session4/SlidesM6S4.pdf)
+- Practicals: [TutoM6S4.pdf](Session4/TutoM6S4.pdf)
 
 
 ### Course 5: WGCNA, network inference
