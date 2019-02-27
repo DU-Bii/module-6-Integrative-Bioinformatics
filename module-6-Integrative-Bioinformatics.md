@@ -8,7 +8,7 @@
 - Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/>
 
 
-## Sessions
+## Teaching material
 
 | Topics | Trainers  | Access |
 |--------------------------------------------|----------------------------|------------|
@@ -44,19 +44,21 @@ At the end of this course, trainees should be able to do the following: $
 ## Table of contents
 
 
-### Course 1: Functional interpretation of gene sets
+### Session 1: Functional interpretation of gene sets
 
 [Présentation](Session1/DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
 
 *Teachers: Jacques van Helden and Olivier Sand*
 
 Concepts:
+
 - functional annotations,
 - Gene Ontology,
 - pathways (metabolic, signaling),
 - biomolecular networks (protein-protein, co-expression, molecular complexes, metabolic reactions)
 
 Resources:
+
 - databases containing these data types.
 - g:Profiler (Web site + R library)
 - metabolic mapping tools (KEGG pathway coloring).
@@ -71,7 +73,7 @@ Enrichment tests:
 Application:
 - Annotation of groups of genes produced by the other courses (e.g. differentially expressed genes from RNA-seq, disease-associated genes, ...)
 
-### Course 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
+### Sessions 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
@@ -84,6 +86,7 @@ Application:
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
 Concepts:
+
 - Integrative bioinformatics approaches and their application to cancer (Laura Cantini)  
        - Motivation  
        - Which approach to answer which question (subsetting, modules, pathways) ?  
@@ -92,14 +95,15 @@ Concepts:
 - Kernel-based approaches (Jérôme Mariette)
 
 Practical:
+
 - mixOmics
 - JM tools (please specify)
 
 Datasets:
-- TCGA
+- Chronic Lymphoblastic Leukemia (CLL)
 - metagenomics data (Jérôme Mariette)
 
-### Course 4: Network Analysis with Cytoscape, session I
+### Session 4: Network Analysis with Cytoscape, session I
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
@@ -113,7 +117,7 @@ Datasets:
 - Practicals: [TutoM6S4.pdf](Session4/TutoM6S4.pdf)
 
 
-### Course 5: WGCNA, network inference
+### Session 5: WGCNA, network inference
 
 *Teachers: Costas Bouyioukos and Anaïs Baudot*
 
@@ -132,7 +136,7 @@ Datasets:
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
 
 
-### Course 6: Network Analysis with Cytoscape, session II
+### Session 6: Network Analysis with Cytoscape, session II
 
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
