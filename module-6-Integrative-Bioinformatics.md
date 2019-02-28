@@ -126,6 +126,9 @@ Datasets:
 - Introduction to WGCNA and the concept of eigengenes.
 - Practical with R
     - Inferrence of co-expression networks with the WGCNA package
+    
+- Slides: <a href="https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session5/WGCNA_seance5%20(1).pdf">SlidesM6S5.pdf</a>  
+
 
  The document containing all the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](Session5/Network_Inference_with_WGCNA.html)
 
