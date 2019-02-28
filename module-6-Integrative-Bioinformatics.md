@@ -142,7 +142,9 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 *Teachers: Anaïs Baudot and Costas Bouyioukos*
 
 - Introduction to Network algorithms (measures, guilt-by-association, clustering), slides [here](https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session6/Session6.pdf)
+
 - Practical with Cytoscape, the tutorial for parts 1 and 2 can be found [here](https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session6/Tutorial%20-%20Module%206%20-%20Seance%206.pdf)
+
        - Integrating networks: multiplex networks     
        - Integrating expression data in networks: jActive module
        - Integrating knowledge in networks: Enrichmap
