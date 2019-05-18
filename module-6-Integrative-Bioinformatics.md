@@ -2,6 +2,10 @@
 
 ----------------------------------------------------------------
 
+## Examen 2019
+
+- [sujet du devoir personnel 2019](examens)
+
 ## Access to training material
 
 - Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/>
