@@ -4,7 +4,8 @@
 
 ## Examen 2019
 
-- [sujet du devoir personnel 2019](examens)
+- **[sujet du devoir personnel 2019](examens)**
+- Date-limite: dimanche 2 juin à 23h55
 
 ## Access to training material
 
