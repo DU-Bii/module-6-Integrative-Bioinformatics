@@ -17,9 +17,9 @@
 
 | Topics | Trainers  | Access |
 |--------------------------------------------|----------------------------|------------|
-| Introduction to the course + functional annotation of gene sets | Jacques van Helden | [Seance1](Seance1) |
-| Integrating multi-omics data with multi-level matrix factorisation | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Seance2-3](Seance2-3) |
-| Network Analysis with Cytoscape, session I | Anaïs Baudot & Costas Boulyakis | [Seance4](Seance4) |
+| Introduction to the course + functional annotation of gene sets | Jacques van Helden | [Seance1](Session1) |
+| Integrating multi-omics data with multi-level matrix factorisation | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Seance2-3](Session2-3) |
+| Network Analysis with Cytoscape, session I | Anaïs Baudot & Costas Boulyakis | [Seance4](Session4) |
 
 ## Description
 
