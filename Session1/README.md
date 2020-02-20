@@ -1,4 +1,4 @@
-Session 1: Functional interpretation of gene sets
+###Session 1: Functional interpretation of gene sets
 
 Teachers: Jacques van Helden and Olivier Sand
 
