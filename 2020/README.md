@@ -78,13 +78,12 @@ Datasets:
 *Teachers: Anaïs Baudot*
 
 - Introduction to network sciences in biology
+        - Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
+        - Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
 - Practical with Cytoscape
     - Basics on human interactome
     - Keywords: interactome, regumone, network visualisation and topological analyses
-
-- Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
-- Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
-- Practicals: [TutoM6S4.pdf](sessio3)
+    - Practicals: [Tuto](session3)
 
 ### Session 4: Web sémantique et représentation des connaissances
 
@@ -111,23 +110,6 @@ Datasets:
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
 
 
-### Session 6: Network Analysis with Cytoscape, session II
-
-*Teachers: Anaïs Baudot and Costas Bouyioukos*
-
-- Introduction to Network algorithms (measures, guilt-by-association, clustering), slides [here](https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session6/Session6.pdf)
-
-- Practical with Cytoscape, the tutorial for parts 1 and 2 can be found [here](https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session6/Tutorial%20-%20Module%206%20-%20Seance%206.pdf)
-
-       - Integrating networks: multiplex networks     
-       - Integrating expression data in networks: jActive module
-       - Integrating knowledge in networks: Enrichmap
-
-----------------------------------------------------------------
-
-## Planning DU-Bii 2019
-
-<https://tinyurl.com/dubii19-planning>
 
 ----------------------------------------------------------------
 
@@ -138,10 +120,11 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
 2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
 3. Olivier Sand 
+4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
+
 
 ### Other teachers
 
-4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 ----------------------------------------------------------------
 
