@@ -22,7 +22,7 @@
 
 This course takes place in the 1-month training "Diplôme Universitaire en Bioinformatique Intégrative" ([DU-Bii](https://du-bii.github.io/accueil/)) organised by Université Paris-Diderot and the Institut Français de Bioinformatique (IFB).
 
-
+<!--- 
 ### Pre-requisites
 
 All participants are encouraged to follow the two introductory videos and read the review in the Paris Diderot course "Moodle" page.
@@ -39,7 +39,7 @@ At the end of this course, trainees should be able to do the following: $
 
 - ....
 
-
+--->
 
 ## Table of contents
 
