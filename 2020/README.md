@@ -82,8 +82,9 @@ Datasets:
     - Basics on human interactome
     - Keywords: interactome, regumone, network visualisation and topological analyses
 
-- Slides: [SlidesM6S4.pdf](Session4/SlidesM6S4.pdf)
-- Practicals: [TutoM6S4.pdf](Session4/TutoM6S4.pdf)
+- Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
+- Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
+- Practicals: [TutoM6S4.pdf](sessio3)
 
 ### Session 4: Web sémantique et représentation des connaissances
 
