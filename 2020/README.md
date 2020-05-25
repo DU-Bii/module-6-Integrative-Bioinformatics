@@ -14,8 +14,9 @@
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
 | Analyse multi-omique par factorisation multi-niveaux de matrices | Laura Cantini, Sébastien Déjean and Jérôme Mariette |  |
-| Network Analysis with Cytoscape, session I | Anaïs Baudot & Costas Boulyakis |  |
+| Network Analysis & Cytoscape | Anaïs Baudot |  |
 | Web semantique, représentation des connaissances | Alban Gaignard | |
+| Network Inference | Costas Boulyakis |  |
 
 ## Description
 
@@ -39,42 +40,10 @@ At the end of this course, trainees should be able to do the following: $
 - ....
 
 
-(For Costas to verify PPI and RNA-Seq integration?)
-
 
 ## Table of contents
 
-
-### Session 1: Functional interpretation of gene sets
-
-[Présentation](Session1/DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
-
-*Teachers: Jacques van Helden and Olivier Sand*
-
-Concepts:
-
-- functional annotations,
-- Gene Ontology,
-- pathways (metabolic, signaling),
-- biomolecular networks (protein-protein, co-expression, molecular complexes, metabolic reactions)
-
-Resources:
-
-- databases containing these data types.
-- g:Profiler (Web site + R library)
-- metabolic mapping tools (KEGG pathway coloring).
-
-Enrichment tests:
-- goals,
-- principles and approaches: enrichment, GSEA, ...
-- statistics (seen in the course Stat with R),
-- good practices (choice of an appropriate background, multiple testing correction),
-- interpretation of the results)
-
-Application:
-- Annotation of groups of genes produced by the other courses (e.g. differentially expressed genes from RNA-seq, disease-associated genes, ...)
-
-### Sessions 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
+### Sessions 1 and 2: Integrating multi-omics data with multi-level matrix factorisation
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
@@ -104,23 +73,26 @@ Datasets:
 - Chronic Lymphoblastic Leukemia (CLL)
 - metagenomics data (Jérôme Mariette)
 
-### Session 4: Network Analysis with Cytoscape, session I
+### Session 3: Network Analysis & Cytoscape
 
-*Teachers: Anaïs Baudot and Costas Bouyioukos*
+*Teachers: Anaïs Baudot*
 
 - Introduction to network sciences in biology
 - Practical with Cytoscape
     - Basics on human interactome
-    - Basics on bacterial regulons
     - Keywords: interactome, regumone, network visualisation and topological analyses
 
 - Slides: [SlidesM6S4.pdf](Session4/SlidesM6S4.pdf)
 - Practicals: [TutoM6S4.pdf](Session4/TutoM6S4.pdf)
 
+### Session 4: Web sémantique et représentation des connaissances
+
+*Teachers: Alban Gaignard*
+
 
 ### Session 5: WGCNA, network inference
 
-*Teachers: Costas Bouyioukos and Anaïs Baudot*
+*Teachers: Costas Bouyioukos*
 
 - Introduction to gene co-expression networks.
 - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
