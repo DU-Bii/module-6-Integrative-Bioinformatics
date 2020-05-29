@@ -2,7 +2,7 @@
 
 Teachers: Jacques van Helden and Olivier Sand
 
-[Présentation](Session1/DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
+[Présentation](DU-Bii_2019_m6s1_Integrative-bioinformatics-intro.pdf)
 
 Concepts:
 
