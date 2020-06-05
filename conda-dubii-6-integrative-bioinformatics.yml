@@ -18,6 +18,7 @@ dependencies:
 
   ## Bioconductor packages
   - bioconda::bioconductor-mixomics=6.6.0
+  - bioconda::bioconductor-MOFAdata
   
   ## Other packages
   - lcantini::r-mofa
