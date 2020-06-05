@@ -122,11 +122,15 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
 2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
 3. [Olivier Sand](https://orcid.org/0000-0003-1465-1640), CNRS, Lille
-4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
+4. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 
 ### Other teachers
 
+1. Laura Cantini
+2. Sébastien Déjean
+3. Jérôme Mariette
+4. Alban Gaignard
 
 ----------------------------------------------------------------
 
