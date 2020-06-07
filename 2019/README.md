@@ -85,8 +85,8 @@ Application:
 | Presentation Laura Cantini |  | [Slides](Session2-3/Cantini_DU-Bii_module6.pdf) |  |
 | Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Session2-3/DUBii_SD_JM.pdf) |  |
 | MixOmics |  | [Slides](Session2-3/slide_mixOmics_2018.pdf) |  | [R](Session2-3/TP_mixOmics_DUBii.R) |
-| Practical MOFA | [html](Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/practical_MOFA.Rmd) |
-| Practical mixKernel | [html](Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/TP_mixKernel_DUBii.Rmd) |
+| Practical MOFA | [html](Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) |
+| Practical mixKernel | [html](Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 

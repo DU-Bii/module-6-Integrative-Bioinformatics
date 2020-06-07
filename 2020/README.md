@@ -47,11 +47,11 @@ At the end of this course, trainees should be able to do the following: $
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | [Slides](Session2-3/Cantini_DU-Bii_module6.pdf) |  |
-| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](Session2-3/DUBii_SD_JM.pdf) |  |
-| MixOmics |  | [Slides](Session2-3/slide_mixOmics_2018.pdf) |  | [R](Session2-3/TP_mixOmics_DUBii.R) |
-| Practical MOFA | [html](Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/practical_MOFA.Rmd) |
-| Practical mixKernel | [html](Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/Session2-3/TP_mixKernel_DUBii.Rmd) |
+| Presentation Laura Cantini |  | [Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) |  |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](../2019/Session2-3/DUBii_SD_JM.pdf) |  |
+| MixOmics |  | [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf) |  | [R](../2019/Session2-3/TP_mixOmics_DUBii.R) |
+| Practical MOFA | [html](../2019/Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) |
+| Practical mixKernel | [html](../2019/Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
@@ -121,12 +121,16 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
 2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
-3. Olivier Sand 
-4.  [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
+3. [Olivier Sand](https://orcid.org/0000-0003-1465-1640), CNRS, Lille
+4. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 
 ### Other teachers
 
+1. Laura Cantini
+2. Sébastien Déjean
+3. Jérôme Mariette
+4. Alban Gaignard
 
 ----------------------------------------------------------------
 
