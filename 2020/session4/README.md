@@ -5,7 +5,7 @@
 No background is required, please interact between participants and with teacher/helper. 
 
 ## Agenda
-This session is planned for 3 hours with the following agenda: 
+This session is planned Tuesday, the 9th of May at 14h, for 3 hours with the following agenda: 
  - 14h-15h: introduction and applications of Knowledge Graphs for Life Sciences  
  - 15h-16h: RDF and SPARQL 
  - 16h-17h: LS ontologies and application in the context gene regulation networks
