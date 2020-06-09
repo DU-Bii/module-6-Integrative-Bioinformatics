@@ -21,4 +21,6 @@ As soon as `conda` is installed on your machine, use the following commands to i
 conda create --name dubii python=3.7 rdflib jupyter -c conda-forge
 ```
 
+If you have troubles with `conda`, click on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/master?filepath=2020%2Fsession4). This will launch a "virtual machine" on the cloud and give you an interactive Jupyter environment. 
+
 See you soon on Tuesday 09/05 at 14:00 ! 
