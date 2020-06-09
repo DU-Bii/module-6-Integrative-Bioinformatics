@@ -16,7 +16,7 @@
 | Analyse multi-omique par factorisation multi-niveaux de matrices | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Sessions 1-2](session1-2)  |
 | Network Analysis & Cytoscape | Anaïs Baudot | [Session 3](session3) |
 | Web semantique, représentation des connaissances | Alban Gaignard |[Session 4](session4)  |
-| Network Inference | Costas Boulyakis | [Session 5](session5)  |
+| Network Inference | Costas Bouyioukos | [Session 5](session5)  |
 
 ## Description
 
@@ -100,7 +100,7 @@ Datasets:
 - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
 - Introduction to WGCNA and the concept of eigengenes.
 - Practical with R
-    - Inferrence of co-expression networks with the WGCNA package
+- Inferrence of co-expression networks with the WGCNA package
     
 - Slides: <a href="https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session5/WGCNA_seance5%20(1).pdf">SlidesM6S5.pdf</a>  
 
@@ -120,7 +120,7 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 ### Course coordinators
 
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
-2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université Paris-Diderot, UMR7216
+2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université de Paris, UMR7216
 3. [Olivier Sand](https://orcid.org/0000-0003-1465-1640), CNRS, Lille
 4. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
