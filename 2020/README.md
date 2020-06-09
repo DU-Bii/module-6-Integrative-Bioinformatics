@@ -96,18 +96,20 @@ Datasets:
 
 *Teachers: Costas Bouyioukos*
 
+- Particulars [please read here](session5/README.md)
+
 - Introduction to gene co-expression networks.
-- Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
 - Introduction to WGCNA and the concept of eigengenes.
-- Practical with R
-- Inferrence of co-expression networks with the WGCNA package
-    
-- Slides: <a href="https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/blob/master/Session5/WGCNA_seance5%20(1).pdf">SlidesM6S5.pdf</a>  
-
-
- The document containing all the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](Session5/Network_Inference_with_WGCNA.html)
+- Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
+    - Slides: [SLidesM6S5](session5/WGCNA_seance5.pdf)
 
  A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
+
+- Practical with R
+    - Inferrence of co-expression networks with the WGCNA package
+
+ The document containing the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](session5/Network_Inference_with_WGCNA.html)
+
 
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
 
