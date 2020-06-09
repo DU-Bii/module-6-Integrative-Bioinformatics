@@ -10,4 +10,4 @@
 - Practical with Cytoscape
     - Basics on human interactome
     - Keywords: interactome, network visualisation and topological analyses
-    - Practicals: [Tuto](session3)
+    - Practicals: [Tuto](TPCytoscape.pdf)

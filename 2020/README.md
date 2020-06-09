@@ -85,7 +85,7 @@ Datasets:
 - Practical with Cytoscape
     - Basics on human interactome
     - Keywords: interactome, regumone, network visualisation and topological analyses
-    - Practicals: [Tuto](session3)
+    - Practicals: [Tuto](session3/TPCytoscape.pdf)
 
 ### Session 4: Web sémantique et représentation des connaissances
 
