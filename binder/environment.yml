@@ -1,0 +1,7 @@
+name: dubii-sem-web
+channels:
+  - conda-forge
+dependencies:
+  - rdflib
+  - jupyter
+  - python==3.7
