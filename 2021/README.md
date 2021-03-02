@@ -49,11 +49,11 @@ At the end of this course, trainees should be able to do the following: $
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | [Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) |  |
-| Practical MOFA | [html](../2019/Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) |
-| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](../2019/Session2-3/DUBii_SD_JM.pdf) |  |
-| MixOmics |  | [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf) |  | [R](../2019/Session2-3/TP_mixOmics_DUBii.R) |
-| Practical mixKernel | [html](../2019/Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) |
+| Presentation Laura Cantini |  |<!--- [Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) --> |  |
+| Practical MOFA |<!--- [html](../2019/Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) --> |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | <!---[Slides](../2019/Session2-3/DUBii_SD_JM.pdf) --> |  |
+| MixOmics |  |<!--- [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf) |  | [R](../2019/Session2-3/TP_mixOmics_DUBii.R)  -->|
+| Practical mixKernel | <!---[html](../2019/Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) --> |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
@@ -91,14 +91,16 @@ Datasets:
 *Teachers: Anaïs Baudot*
 
 - Introduction to network sciences in biology
+<!---
     - Vidéo cours 1: [Cours](https://www.youtube.com/watch?v=Khv0tK6RGew&feature=youtu.be)
     - Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
     - Vidéo cours 2: [Cours](https://www.youtube.com/watch?v=V5jizup7TDo&feature=youtu.be)
     - Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
+ -->
 - Practical with Cytoscape
     - Basics on human interactome
     - Keywords: interactome, regumone, network visualisation and topological analyses
-    - Practicals: [Tuto](session3/TPCytoscape.pdf)
+    - Practicals: <!---[Tuto](session3/TPCytoscape.pdf)-->
 
 
 ### Session 6: WGCNA, network inference
