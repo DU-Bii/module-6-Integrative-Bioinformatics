@@ -99,7 +99,7 @@ Datasets:
  -->
 - Practical with Cytoscape
     - Basics on human interactome
-    - Keywords: interactome, regumone, network visualisation and topological analyses
+    - Keywords: interactome, regulome, network visualisation and topological analyses
     - Practicals: <!---[Tuto](session3/TPCytoscape.pdf)-->
 
 
