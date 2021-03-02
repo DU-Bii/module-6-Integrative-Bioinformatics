@@ -13,8 +13,8 @@
 
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
-| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Sessions 1](session1-2)  |
-| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Sessions 2](session1-2)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Session 1](session1-2)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Session 2](session1-2)  |
 | Web semantique, représentation des connaissances | Alban Gaignard (helper Olivier Sand) |[Session 3](session3)  |
 | ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helper Olivier Sand) |[Session 4](session4)  |
 | Network Analysis & Cytoscape | Anaïs Baudot (helper Olivier Sand)| [Session 5](session5) |
