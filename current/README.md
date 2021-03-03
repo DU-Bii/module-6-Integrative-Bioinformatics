@@ -57,7 +57,7 @@ At the end of this course, trainees should be able to do the following: $
 
 Concepts:
 
-- Integrative bioinformatics approaches and their application to cancer (Laura Cantini)  
+- Integrative bioinformatics approaches and their application to cancer
        - Motivation  
        - Which approach to answer which question (subsetting, modules, pathways) ?  
        - Main methodologies: networks, matrix factorisation  
@@ -96,17 +96,17 @@ Datasets:
 
 ### Session 3: Web sémantique et représentation des connaissances
 
-*Teachers: Alban Gaignard*
+*Teacher: Alban Gaignard*
 
 
 ### Session 4: ProMetIS : un exemple d’intégration de données protéomiques et métabolomiques
 
-*Teachers: Etienne Thévenot*
+*Teacher: Etienne Thévenot*
 
 
 ### Session 5: Network Analysis & Cytoscape
 
-*Teachers: Anaïs Baudot*
+*Teacher: Anaïs Baudot*
 
 - Introduction to network sciences in biology
 <!---
@@ -123,7 +123,7 @@ Datasets:
 
 ### Session 6: WGCNA, network inference
 
-*Teachers: Costas Bouyioukos*
+*Teacher: Costas Bouyioukos*
 
 - Particulars [please read here](session5/README.md)
 
@@ -157,12 +157,12 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 
 ### Other teachers
 
-1. Laura Cantini
-2. Sébastien Déjean
-3. Jérôme Mariette
-4. Alban Gaignard
-5. Etienne Thévenot
-6. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université de Paris, UMR7216
+1. [Laura Cantini](https://orcid.org/0000-0001-6360-4440)
+2. [Sébastien Déjean](https://orcid.org/0000-0001-9610-5306)
+3. [Jérôme Mariette](https://orcid.org/0000-0002-6161-4044)
+4. [Alban Gaignard](https://orcid.org/0000-0002-3597-8557)
+5. [Etienne Thévenot](https://orcid.org/0000-0003-1019-4577)
+6. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736)
 
 ----------------------------------------------------------------
 
