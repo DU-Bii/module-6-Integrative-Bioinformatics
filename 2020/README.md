@@ -27,6 +27,7 @@ This course takes place in the 1-month training "Diplôme Universitaire en Bioin
 All participants are encouraged to follow the two introductory videos and read the review in the Paris Diderot course "Moodle" page.
 <https://moodlesupd.script.univ-paris-diderot.fr/mod/page/view.php?id=167920>
 
+<!---
 ### Skills acquired during this course
 
 At the end of this course, trainees should be able to do the following: $
@@ -37,7 +38,7 @@ At the end of this course, trainees should be able to do the following: $
 ### Concepts covered
 
 - ....
-
+-->
 
 ## Table of contents
 
