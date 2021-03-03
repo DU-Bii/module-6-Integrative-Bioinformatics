@@ -1,4 +1,4 @@
-# Session 4: Semantic Web and knowledge graphs
+# Session 3: Semantic Web and knowledge graphs
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/master?filepath=2020%2Fsession4)
 
 *Teacher: Alban Gaignard (alban.gaignard@univ-nantes.fr)*
