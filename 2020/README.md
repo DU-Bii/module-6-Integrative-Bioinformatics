@@ -15,7 +15,7 @@
 |--------------------------------------------|----------------------------|------------|
 | Analyse multi-omique par factorisation multi-niveaux de matrices | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Session 1 & 2](session1-2)  |
 | Network Analysis & Cytoscape | Anaïs Baudot | [Session 3](session3) |
-| Web semantique, représentation des connaissances | Alban Gaignard (helper Olivier Sand) |[Session 4](session4)  |
+| Web semantique, représentation des connaissances | Alban Gaignard |[Session 4](session4)  |
 | Network Inference & WGCNA | Costas Bouyioukos | [Session 5](session5)  |
 
 ## Description
