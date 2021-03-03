@@ -145,7 +145,7 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 3. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 
-### Other teachers
+### Other teachers / helpers
 
 1. [Laura Cantini](https://orcid.org/0000-0001-6360-4440)
 2. [Sébastien Déjean](https://orcid.org/0000-0001-9610-5306)
@@ -153,6 +153,7 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 4. [Alban Gaignard](https://orcid.org/0000-0002-3597-8557)
 5. [Etienne Thévenot](https://orcid.org/0000-0003-1019-4577)
 6. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736)
+7. [Claire Lansonneur](https://fr.linkedin.com/in/claire-lansonneur)
 
 ----------------------------------------------------------------
 
