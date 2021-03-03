@@ -13,8 +13,8 @@
 
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
-| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Session 1](session1-2)  |
-| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Session 2](session1-2)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Session 1](session1)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Session 2](session2)  |
 | Web semantique, représentation des connaissances | Alban Gaignard (helper Olivier Sand) |[Session 3](session3)  |
 | ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helper Olivier Sand) |[Session 4](session4)  |
 | Network Analysis & Cytoscape | Anaïs Baudot (helper Olivier Sand)| [Session 5](session5) |
@@ -45,17 +45,15 @@ At the end of this course, trainees should be able to do the following: $
 
 ## Table of contents
 
-### Sessions 1 and 2: Integrating multi-omics data with multi-level matrix factorisation
+### Session 1: Integrating multi-omics data with multi-level matrix factorisation
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
 | Presentation Laura Cantini |  | <!---[Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) --> |  |
 | Practical MOFA |<!--- [html](../2019/Session2-3/practical_MOFA.html) -->|  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) --> |
-| Presentation Sébastien Dejean et Jérôme Mariette |  | <!---[Slides](../2019/Session2-3/DUBii_SD_JM.pdf) --> |  |
-| MixOmics |  |<!--- [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf)--> |  | <!---[R](../2019/Session2-3/TP_mixOmics_DUBii.R)  -->|
-| Practical mixKernel | <!---[html](../2019/Session2-3/TP_mixKernel_DUBii.html)--> |  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) --> |
 
-*Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
+
+*Teacher: Laura Cantini*
 
 Concepts:
 
@@ -63,6 +61,27 @@ Concepts:
        - Motivation  
        - Which approach to answer which question (subsetting, modules, pathways) ?  
        - Main methodologies: networks, matrix factorisation  
+
+Practical:
+
+- MOFA
+
+Datasets:
+- Chronic Lymphoblastic Leukemia (CLL)
+
+
+### Session 2: Integrating multi-omics data with multi-level matrix factorisation
+        
+| Contenu | HTML | pdf | Rmd | R |
+|--------------------------------------------------|------|------|-----|-----|
+| Presentation Sébastien Dejean et Jérôme Mariette |  | <!---[Slides](../2019/Session2-3/DUBii_SD_JM.pdf) --> |  |
+| MixOmics |  |<!--- [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf)--> |  | <!---[R](../2019/Session2-3/TP_mixOmics_DUBii.R)  -->|
+| Practical mixKernel | <!---[html](../2019/Session2-3/TP_mixKernel_DUBii.html)--> |  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) --> |
+
+*Teachers: Sébastien Déjean, Jérôme Mariette*
+
+Concepts:
+
 - Principles of multi-level matrix factorisation (Sébastien Déjean)
 - Kernel-based approaches (Jérôme Mariette)
 
@@ -74,7 +93,6 @@ Practical:
 Datasets:
 - Chronic Lymphoblastic Leukemia (CLL)
 - metagenomics data (Jérôme Mariette)
-
 
 ### Session 3: Web sémantique et représentation des connaissances
 
