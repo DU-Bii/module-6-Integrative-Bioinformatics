@@ -1,4 +1,4 @@
-### Sessions 2 and 3: Integrating multi-omics data with multi-level matrix factorisation
+### Session 1: Integrating multi-omics data with multi-level matrix factorisation (MOFA)
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
