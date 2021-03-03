@@ -1,4 +1,4 @@
-### Session 5: Network Inference
+### Session 6: Network Inference
 
 *Teachers: Costas Bouyioukos*
 
