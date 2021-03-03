@@ -13,12 +13,12 @@
 
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
-| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Anaïs Baudot, Olivier Sand, ?)| [Session 1](session1)  |
-| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helpers ?, Olivier Sand) | [Session 2](session2)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Anaïs Baudot, Claire Lansonneur, Olivier Sand)| [Session 1](session1)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helpers Etienne Thévenot, Claire Lansonneur, Olivier Sand) | [Session 2](session2)  |
 | Web semantique, représentation des connaissances | Alban Gaignard (helpers ?, Olivier Sand) |[Session 3](session3)  |
 | ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helpers ?, Olivier Sand) |[Session 4](session4)  |
-| Network Analysis & Cytoscape | Anaïs Baudot (helpers ?, Olivier Sand)| [Session 5](session5) |
-| Network Inference & WGCNA | Costas Bouyioukos (helpers ?, Olivier Sand) | [Session 6](session6)  |
+| Network Analysis & Cytoscape | Anaïs Baudot (helpers Claire Lansonneur, Olivier Sand)| [Session 5](session5) |
+| Network Inference & WGCNA | Costas Bouyioukos (helpers Anaïs Baudot, Claire Lansonneur, Olivier Sand) | [Session 6](session6)  |
 
 ## Description
 
@@ -46,12 +46,6 @@ At the end of this course, trainees should be able to do the following: $
 ## Table of contents
 
 ### Session 1: Integrating multi-omics data with multi-level matrix factorisation
-        
-| Contenu | HTML | pdf | Rmd | R |
-|--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | <!---[Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) --> |  |
-| Practical MOFA |<!--- [html](../2019/Session2-3/practical_MOFA.html) -->|  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) --> |
-
 
 *Teacher: Laura Cantini*
 
@@ -71,12 +65,6 @@ Datasets:
 
 
 ### Session 2: Integrating multi-omics data with multi-level matrix factorisation
-        
-| Contenu | HTML | pdf | Rmd | R |
-|--------------------------------------------------|------|------|-----|-----|
-| Presentation Sébastien Dejean et Jérôme Mariette |  | <!---[Slides](../2019/Session2-3/DUBii_SD_JM.pdf) --> |  |
-| MixOmics |  |<!--- [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf)--> |  | <!---[R](../2019/Session2-3/TP_mixOmics_DUBii.R)  -->|
-| Practical mixKernel | <!---[html](../2019/Session2-3/TP_mixKernel_DUBii.html)--> |  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) --> |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette*
 
@@ -127,19 +115,19 @@ Datasets:
 
 *Teacher: Costas Bouyioukos*
 
-- Particulars [please read here](session5/README.md)
+- Particulars [please read here](../2020/session5/README.md)
 
 - Introduction to gene co-expression networks.
 - Introduction to WGCNA and the concept of eigengenes.
 - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
-    - Slides: [SLidesM6S5](session5/WGCNA_seance5.pdf)
+    - Slides: [SLidesM6S5](../2020/session5/WGCNA_seance5.pdf)
 
  A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
 
 - Practical with R
     - Inferrence of co-expression networks with the WGCNA package
 
- The document containing the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](session5/Network_Inference_with_WGCNA.html)
+ The document containing the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](../2020/session5/Network_Inference_with_WGCNA.html)
 
 
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
