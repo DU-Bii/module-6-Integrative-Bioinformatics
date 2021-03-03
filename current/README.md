@@ -13,12 +13,12 @@
 
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
-| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Session 1](session1)  |
-| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Session 2](session2)  |
-| Web semantique, représentation des connaissances | Alban Gaignard (helper Olivier Sand) |[Session 3](session3)  |
-| ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helper Olivier Sand) |[Session 4](session4)  |
-| Network Analysis & Cytoscape | Anaïs Baudot (helper Olivier Sand)| [Session 5](session5) |
-| Network Inference & WGCNA | Costas Bouyioukos (helper ?) | [Session 6](session6)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Anaïs Baudot, Olivier Sand, ?)| [Session 1](session1)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helpers ?, Olivier Sand) | [Session 2](session2)  |
+| Web semantique, représentation des connaissances | Alban Gaignard (helpers ?, Olivier Sand) |[Session 3](session3)  |
+| ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helpers ?, Olivier Sand) |[Session 4](session4)  |
+| Network Analysis & Cytoscape | Anaïs Baudot (helpers ?, Olivier Sand)| [Session 5](session5) |
+| Network Inference & WGCNA | Costas Bouyioukos (helpers ?, Olivier Sand) | [Session 6](session6)  |
 
 ## Description
 
