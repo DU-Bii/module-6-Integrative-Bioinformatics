@@ -115,7 +115,7 @@ Datasets:
 
 *Teacher: Costas Bouyioukos*
 
-- Particulars [please read here](../2020/session5/README.md)
+- Particulars [please read here](session6/README.md)
 
 - Introduction to gene co-expression networks.
 - Introduction to WGCNA and the concept of eigengenes.
