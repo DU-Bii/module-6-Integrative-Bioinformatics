@@ -2,8 +2,8 @@
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | [Slides](/2019/Session2-3/Cantini_DU-Bii_module6.pdf) |  |
-| Practical MOFA | [html](practical_MOFA.html) |  | [Rmd](/2020/session1-2/practical_MOFA.Rmd) |
+| Presentation Laura Cantini |  | [Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) |  |
+| Practical MOFA | [html](practical_MOFA.html) |  | [Rmd](../2020/session1-2/practical_MOFA.Rmd) |
 
 *Teacher: Laura Cantini*
 
