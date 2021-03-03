@@ -100,8 +100,6 @@ Datasets:
 
 *Teacher: Costas Bouyioukos*
 
-- Particulars [please read here](session5/README.md)
-
 - Introduction to gene co-expression networks.
 - Introduction to WGCNA and the concept of eigengenes.
 - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
