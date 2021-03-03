@@ -1,4 +1,4 @@
-### Session 3: Network Analysis and Cytoscape
+### Session 5: Network Analysis and Cytoscape
 
 *Teachers: Anaïs Baudot*
 
