@@ -5,18 +5,20 @@
 
 ## Access to training material
 
-- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/2020/>
-- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/2020/>
+- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/2021/>
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/2021/>
 
 
 ## Teaching material
 
 | Topics | Trainers  | Teaching material |
 |--------------------------------------------|----------------------------|------------|
-| Analyse multi-omique par factorisation multi-niveaux de matrices | Laura Cantini, Sébastien Déjean and Jérôme Mariette | [Sessions 1-2](session1-2)  |
-| Network Analysis & Cytoscape | Anaïs Baudot | [Session 3](session3) |
-| Web semantique, représentation des connaissances | Alban Gaignard |[Session 4](session4)  |
-| Network Inference | Costas Bouyioukos | [Session 5](session5)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (MOFA) | Laura Cantini (helpers Olivier Sand, Anaïs Baudot)| [Session 1](session1-2)  |
+| Analyse multi-omique par factorisation multi-niveaux de matrices (mixOmics/mixKernel) | Sébastien Déjean and Jérôme Mariette (à distance) (helper Olivier Sand) | [Session 2](session1-2)  |
+| Web semantique, représentation des connaissances | Alban Gaignard (helper Olivier Sand) |[Session 3](session3)  |
+| ProMetIS: : un exemple d’intégration de données protéomiques et métabolomiques | Etienne Thévenot (helper Olivier Sand) |[Session 4](session4)  |
+| Network Analysis & Cytoscape | Anaïs Baudot (helper Olivier Sand)| [Session 5](session5) |
+| Network Inference & WGCNA | Costas Bouyioukos (helper ?) | [Session 6](session6)  |
 
 ## Description
 
@@ -47,11 +49,11 @@ At the end of this course, trainees should be able to do the following: $
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Laura Cantini |  | [Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) |  |
-| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](../2019/Session2-3/DUBii_SD_JM.pdf) |  |
-| MixOmics |  | [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf) |  | [R](../2019/Session2-3/TP_mixOmics_DUBii.R) |
-| Practical MOFA | [html](../2019/Session2-3/practical_MOFA.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) |
-| Practical mixKernel | [html](../2019/Session2-3/TP_mixKernel_DUBii.html) |  | [Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) |
+| Presentation Laura Cantini |  | <!---[Slides](../2019/Session2-3/Cantini_DU-Bii_module6.pdf) --> |  |
+| Practical MOFA |<!--- [html](../2019/Session2-3/practical_MOFA.html) -->|  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/practical_MOFA.Rmd) --> |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | <!---[Slides](../2019/Session2-3/DUBii_SD_JM.pdf) --> |  |
+| MixOmics |  |<!--- [Slides](../2019/Session2-3/slide_mixOmics_2018.pdf)--> |  | <!---[R](../2019/Session2-3/TP_mixOmics_DUBii.R)  -->|
+| Practical mixKernel | <!---[html](../2019/Session2-3/TP_mixKernel_DUBii.html)--> |  | <!---[Rmd](https://raw.githubusercontent.com/DU-Bii/module-6-Integrative-Bioinformatics/master/2019/Session2-3/TP_mixKernel_DUBii.Rmd) --> |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette et Laura Cantini*
 
@@ -73,26 +75,35 @@ Datasets:
 - Chronic Lymphoblastic Leukemia (CLL)
 - metagenomics data (Jérôme Mariette)
 
-### Session 3: Network Analysis & Cytoscape
 
-*Teachers: Anaïs Baudot*
-
-- Introduction to network sciences in biology
-    - Vidéo cours 1: [Cours](https://www.youtube.com/watch?v=Khv0tK6RGew&feature=youtu.be)
-    - Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
-    - Vidéo cours 2: [Cours](https://www.youtube.com/watch?v=V5jizup7TDo&feature=youtu.be)
-    - Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
-- Practical with Cytoscape
-    - Basics on human interactome
-    - Keywords: interactome, regumone, network visualisation and topological analyses
-    - Practicals: [Tuto](session3/TPCytoscape.pdf)
-
-### Session 4: Web sémantique et représentation des connaissances
+### Session 3: Web sémantique et représentation des connaissances
 
 *Teachers: Alban Gaignard*
 
 
-### Session 5: WGCNA, network inference
+### Session 4: ProMetIS : un exemple d’intégration de données protéomiques et métabolomiques
+
+*Teachers: Etienne Thévenot*
+
+
+### Session 5: Network Analysis & Cytoscape
+
+*Teachers: Anaïs Baudot*
+
+- Introduction to network sciences in biology
+<!---
+    - Vidéo cours 1: [Cours](https://www.youtube.com/watch?v=Khv0tK6RGew&feature=youtu.be)
+    - Slides cours 1: [Slides](session3/Cours1_DUBii_M6_Networks.pdf)
+    - Vidéo cours 2: [Cours](https://www.youtube.com/watch?v=V5jizup7TDo&feature=youtu.be)
+    - Slides cours 2: [Slides](session3/Cours2_DUBii_M6_Networks.pdf)
+ -->
+- Practical with Cytoscape
+    - Basics on human interactome
+    - Keywords: interactome, regulome, network visualisation and topological analyses
+    - Practicals: <!---[Tuto](session3/TPCytoscape.pdf)-->
+
+
+### Session 6: WGCNA, network inference
 
 *Teachers: Costas Bouyioukos*
 
@@ -122,9 +133,8 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 ### Course coordinators
 
 1. [Anaïs Baudot](https://orcid.org/0000-0003-0885-7933), CNRS, Marseille
-2. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université de Paris, UMR7216
-3. [Olivier Sand](https://orcid.org/0000-0003-1465-1640), CNRS, Lille
-4. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
+2. [Olivier Sand](https://orcid.org/0000-0003-1465-1640), CNRS, Lille
+3. [Jacques van Helden](https://orcid.org/0000-0002-8799-8584), Institut Français de Bioinformatique, Aix-Marseille Université
 
 
 ### Other teachers
@@ -133,6 +143,8 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 2. Sébastien Déjean
 3. Jérôme Mariette
 4. Alban Gaignard
+5. Etienne Thévenot
+6. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736), Université de Paris, UMR7216
 
 ----------------------------------------------------------------
 
