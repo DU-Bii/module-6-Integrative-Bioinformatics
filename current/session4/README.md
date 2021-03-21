@@ -5,4 +5,4 @@
 | Presentation |  | [Slides]() |  |
 | Practical | [html]() |  | [Rmd]() |  |
 
-*Teacher: Etienne Thévenot*
+*Teacher: Etienne A. Thévenot*
