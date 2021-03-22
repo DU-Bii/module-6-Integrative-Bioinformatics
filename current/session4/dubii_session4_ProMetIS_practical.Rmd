@@ -1,0 +1,355 @@
+---
+title: "ProMetIS: proteomics and metabolomics data integration"
+author: "Alyssa Imbert and Etienne Thevenot (ProMetIS consortium)"
+date: "`r doc_date()`"
+
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography: "dubii_session4_ProMetIS_practical.bib"
+output:
+  BiocStyle::html_document:
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+---
+
+![](figures/prometis_logo.png)
+
+# Loading the multi-omics dataset
+
+The multi-omics dataset is stored in the **extdata** folder, at the successive levels of post-processing and analysis. Here, we will start at the final **aggregated** level, and we will focus on the **LAT vs WT** data (**5a_aggregated_LAT' folder**).
+
+Each one of the 6 omics dataset is stored as 3 tabular files (**dataMatrix.tsv**, **sampleMetadata.tsv**, and **variableMetadata.tsv**) in a dedicated subfolder (see the [**Appendix**](#appendix) for details about the **3 table format**).
+
+Getting the data repository:
+
+```{r data_dir}
+lat_mset_dir.c <- ProMetIS::aggregated_dir.c("LAT")
+lat_mset_dir.c
+```
+
+The multi-omics dataset is imported as a **MultiDataSet** object (generalization of ExpressionSet for multi-datasets (see the see the [**Appendix**](#appendix)); [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1)) with the `reading` function from the `phenomis` package:
+
+```{r reading}
+lat.mset <- phenomis::reading(lat_mset_dir.c, report.c = "none")
+```
+
+In the rest of the vignette, we will focus on the analysis of the **liver** (1 proteomics and 2 metabolomics datasets):
+
+```{r liver}
+latliv.mset <- lat.mset[, grep("liver", names(lat.mset), value = TRUE)]
+```
+
+
+The multi-omics dataset may be explored with the `inspecting` method from the `phenomis` package:
+
+```{r inspecting}
+latliv.mset <- phenomis::inspecting(latliv.mset, report.c = "none")
+```
+
+# Single omics analysis
+
+The [**phenomis**](https://github.com/ethevenot/phenomis), [**ropls**](https://doi.org/10.18129/B9.bioc.ropls), and [**biosigner**](https://doi.org/10.18129/B9.bioc.biosigner) R packages provide methods which can be applied to MultiDataSet objects for parallel, single omics, analysis, as shown below.
+
+## Univariate Hypothesis Testing (`phenomis::hypotesting`)
+
+```{r hypotesting}
+latliv.mset <- phenomis::hypotesting(latliv.mset,
+                                     factor_names.vc = "gene",
+                                     test.c = "ttest",
+                                     report.c = "none")
+```
+
+## Principal Component Analysis (`ropls::opls`)
+
+```{r pca}
+latliv.pca <- ropls::opls(latliv.mset, predI = 2, info.txtC = "none")
+latliv.mset <- ropls::getMset(latliv.pca)
+```
+
+## Partial Least-Squares - Discriminant Analysis (`ropls::opls`)
+
+```{r oplsda}
+latliv.oplsda <- ropls::opls(latliv.mset,
+                             y = "gene",
+                             predI = 1,
+                             orthoI = 1,
+                             info.txtC = "none")
+latliv.mset <- ropls::getMset(latliv.oplsda)
+```
+
+# Multi-omics integration
+
+Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138). Here we provide two examples: multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and integrative clustering [[@Mo_PatternDiscoveryCancer_2013]](https://doi.org/10.1073/pnas.1208949110).
+
+## Multiple co-intertia analysis (**omicade4** package)
+
+The following analysis is adapted from the [**omicade4** vignette](https://bioconductor.org/packages/release/bioc/vignettes/omicade4/inst/doc/omicade4.pdf) and the **Using MultiDataSet with third party R packages** additional file 2 [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
+
+Restricting the datasets to common samples:
+
+```{r mcia_common}
+latliv.mset <- MultiDataSet::commonSamples(latliv.mset)
+```
+
+Exporting the data matrices:
+
+```{r mcia_data}
+latliv_mn.ls <- MultiDataSet::as.list(latliv.mset)
+```
+
+Replacing the "." by "_" in the metabolomics feature names (otherwise the names will be truncated during the call to mcia):
+
+```{r mcia_feature_names}
+latliv_mn.ls <- lapply(latliv_mn.ls, function(latliv.mn) {
+  rownames(latliv.mn) <- gsub(".", "_", rownames(latliv.mn), fixed = TRUE)
+  latliv.mn
+})
+```
+
+Performing MCIA:
+
+```{r mcia_compute}
+latliv.mcia <- omicade4::mcia(latliv_mn.ls)
+```
+
+Plotting the results (samples are colored by genotype):
+
+```{r mcia_plot}
+gene.vc <- Biobase::pData(latliv.mset)[["proteomics_liver"]][, "gene"]
+require(ade4)
+omicade4::plot.mcia(latliv.mcia, axes = 1:2, phenovec = gene.vc, sample.lab = FALSE)
+```
+
+On the projection plot, axis 2 separates LAT and WT genotypes, whereas females and males are separated by axis 1.
+
+Variables most contributing to axis 2 are metabolites:
+
+```{r selectVar2}
+omicade4::selectVar(latliv.mcia, a1.lim = c(-Inf, Inf), a2.lim = c(2, Inf))
+```
+Contribution to axis 1 also includes proteins:
+
+```{r selectVar1}
+omicade4::selectVar(latliv.mcia, a1.lim = c(2.5, Inf), a2.lim = c(-Inf, Inf))
+```
+
+## Integrative clustering (**iClusterPlus** package)
+
+The following analysis is adapted from the [**iClusterPlus** iManual](https://www.bioconductor.org/packages/release/bioc/vignettes/iClusterPlus/inst/doc/iManual.pdf) and the **Using MultiDataSet with third party R packages** additional file 2 [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
+
+Restricting to the common samples:
+
+```{r icp_common}
+latliv.mset <- MultiDataSet::commonSamples(latliv.mset)
+```
+
+Exporting the (transposed) data matrices as a list with 'dti' names:
+
+```{r icp_data}
+latliv.ls <- lapply(MultiDataSet::as.list(latliv.mset), t)
+names(latliv.ls) <- paste0("dt", base::seq_along(latliv.ls))
+```
+
+Adding the gaussian distribution type of the features:
+
+```{r icp_type}
+type.vc <- rep("gaussian", length(latliv.mset))
+names(type.vc) <- paste0("dt", base::seq_along(latliv.ls))
+latliv.ls[["type"]] <- type.vc
+```
+
+Performing the clustering:
+
+```{r icp_compute}
+latliv.iclusterplus <- do.call(iClusterPlus::iClusterPlus, c(latliv.ls))
+```
+
+Plotting the results (the 'lattice' and 'gplots' packages are required):
+
+```{r icp_plot}
+require(lattice)
+require(gplots)
+iClusterPlus::plotHeatmap(fit = latliv.iclusterplus,
+                          datasets = latliv.ls[setdiff(names(latliv.ls), "type")],
+                          type = latliv.ls[["type"]],
+                          col.scheme = list(bluered(256),
+                                            bluered(256),
+                                            bluered(256)),
+                          row.order = c(T,T,T),
+                          sparse = c(T,F,T),
+                          cap = c(F,F,F))
+
+```
+
+# Appendix
+
+## 3 tabular file format used for import/export
+
+Each dataset consists of:
+
+1. a numeric matrix of intensities (**dataMatrix**)
+
+2. a data frame of sample metadata (**sampleMetadata**)
+
+3. a data frame of variable metadata (**variableMetadata**)
+
+Theses 3 tables can be conveniently imported to/exported from R as tabular files:
+
+![](figures/phenomis_3table_format.png)
+
+### **ExpressionSet** class for a single dataset
+
+The following table describes useful Biobase methods for the handling of ExpressionSet objects (see the ['An introduction to Biobase and ExpressionSets'](https://bioconductor.org/packages/release/bioc/vignettes/Biobase/inst/doc/ExpressionSetIntroduction.pdf) documentation from the [**Biobase**](https://doi.org/doi:10.18129/B9.bioc.Biobase) package): 
+
+| Biobase methods | Description |
+|---|---|
+| **dims(eset)** | 2-row numeric matrix of 'Features' and 'Samples' dimensions|
+| **exprs(eset)** | 'variable times samples' numeric matrix - dataMatrix |
+| **pData(eset)** | sample metadata data frame - sampleMetadata |
+| **fData(eset)** | variable metadata data frame - variableMetadata |
+| **sampleNames(eset)** | sample names |
+| **featureNames(eset)** | variable names |
+| **varLabels(eset)** | Column names of the sampleMetadata, pData(eset) |
+| **fvarLabels(eset)** | Column names of the variableMetadata, fData(eset) |
+
+Creating an ExpressionSet with `Biobase::ExpressionSet`:
+
+```{r eset_create}
+lat_dir.c <- ProMetIS::aggregated_dir.c("LAT")
+latlivprot_dir.c <- file.path(lat_dir.c, "proteomics_liver")
+dataMatrix.mn <- as.matrix(read.table(file.path(latlivprot_dir.c, "dataMatrix.tsv"),
+                                      header = TRUE,
+                                      row.names = 1,
+                                      sep = "\t",
+                                      comment.char = "",
+                                      quote = "\""))
+sampleMetadata.df <- read.table(file.path(latlivprot_dir.c, "sampleMetadata.tsv"),
+                                header = TRUE,
+                                row.names = 1,
+                                sep = "\t",
+                                comment.char = "",
+                                quote = "\"")
+variableMetadata.df <- read.table(file.path(latlivprot_dir.c, "variableMetadata.tsv"),
+                                  header = TRUE,
+                                  row.names = 1,
+                                  sep = "\t",
+                                  comment.char = "",
+                                  quote = "\"")
+latlivprot.eset <- Biobase::ExpressionSet(assayData = dataMatrix.mn,
+                                          phenoData = Biobase::AnnotatedDataFrame(data = sampleMetadata.df),
+                                          featureData = Biobase::AnnotatedDataFrame(data = variableMetadata.df),
+                                          experimentData = Biobase::MIAME(title = "lat_proteomics_liver"))
+```
+
+which is equivalent to:
+
+```{r eset_read}
+latlivprot.eset <- phenomis::reading(latlivprot_dir.c)
+```
+
+Brackets may be used to restrict the ExpressionSet to specific sample or features:
+
+```{r eset_subset}
+wt.eset <- latlivprot.eset[, grep("W", Biobase::sampleNames(latlivprot.eset))]
+Biobase::dims(wt.eset)
+signif.eset <- latlivprot.eset[Biobase::fData(latlivprot.eset)[, "WT.KO_signif"] > 0, ]
+Biobase::dims(signif.eset)
+```
+
+Exporting the ExpressionSet in the 3 table format:
+
+```{r eset_write, eval = FALSE}
+phenomis::writing(latlivprot.eset, dir.c = "your_prefered_directory")
+```
+
+
+### **MultiDataSet** class for multiple datasets
+
+The following table describes useful MultiDataSet (and Biobase) methods for the handling of MultiDataSet objects [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1):
+
+| MultiDataSet and Biobase methods | Description |
+|---|---|
+| **MultiDataSet::length(mset)** | number of datasets |
+| **MultiDataSet::names(eset)** | names of the datasets |
+| **Biobase::dims(mset)** | list of 2-element numeric named ('Features' and 'Samples') vectors of data set dimensions |
+| **MultiDataSet::commonSamples(mset)** | multi-dataset restricted to the common samples |
+| **MultiDataSet::as.list(mset)** | list of data matrices |
+| **Biobase::pData(mset)** | list of sample metadata data frames |
+| **Biobase::fData(mset)** | list of variable metadata data frames |
+| **BiocGenerics::subset(mset)** | subsetting on common columns from the sampleMetadata and/or variableMetadata |
+
+Creating a MultiDataSet with `MultiDataSet::createMultiDataSet`:
+
+```{r mset_create}
+lat_dir.c <- ProMetIS::aggregated_dir.c("LAT")
+proteo.eset <- phenomis::reading(file.path(lat_dir.c, "proteomics_liver"), report.c = "none")
+metabo_c18.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_c18hypersil_pos"), report.c = "none")
+metabo_hilic.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_hilic_neg"), report.c = "none")
+
+latliv.mset <- MultiDataSet::createMultiDataSet()
+latliv.mset <- MultiDataSet::add_eset(latliv.mset,
+                                      proteo.eset,
+                                      dataset.type = "proteomics_liver",
+                                      GRanges = NA)
+latliv.mset <- MultiDataSet::add_eset(latliv.mset,
+                                      metabo_c18.eset,
+                                      dataset.type = "metabolomics_liver_c18hypersil_pos",
+                                      GRanges = NA)
+latliv.mset <- MultiDataSet::add_eset(latliv.mset,
+                                      metabo_hilic.eset,
+                                      dataset.type = "metabolomics_liver_hilic_neg",
+                                      GRanges = NA)
+```
+
+which is equivalent to:
+
+```{r mset_read}
+latliv.mset <- phenomis::reading(lat_dir.c,
+                                 subsets.vc = c("proteomics_liver",
+                                                "metabolomics_liver_c18hypersil_pos",
+                                                "metabolomics_liver_hilic_neg"),
+                                 report.c = "none")
+```
+
+Brackets may be used to restrict the MultiDataSet to specific samples or datasets:
+
+```{r mset_subset}
+wt.mset <- latliv.mset[grep("W", Biobase::sampleNames(latliv.mset)[["proteomics_liver"]], value = TRUE), ]
+Biobase::dims(wt.mset)
+
+metabo.mset <- latliv.mset[, c("metabolomics_liver_c18hypersil_pos", "metabolomics_liver_hilic_neg")]
+names(metabo.mset)
+```
+
+Note: In case of the restriction to a single dataset, the single bracket (as shown above) will outpout a MultiDataSet object. To get an ExpressionSet, either add the drop = TRUE argument or use the double brackets:
+
+```{r mset_to_eset}
+proteo.eset <- latliv.mset[["proteomics_liver"]]
+```
+
+Subsetting based on (common) columns from the sampleMetadata and/or variableMetadata may be performed with `BiocGenerics::subset`:
+
+```{r mset_subset_features}
+female.mset <- BiocGenerics::subset(latliv.mset, , sex == "F")
+# or
+signif.mset <- BiocGenerics::subset(latliv.mset, WT.KO_signif > 0, )
+```
+
+Exporting the MultiDataSet into the 3 table format (each dataset will be written as 3 tables in a specific subfolder):
+
+```{r mset_write, eval = FALSE}
+phenomis::writing(latliv.mset, dir.c = "your_prefered_directory")
+```
+
+# Session Info
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+
+# References
+
