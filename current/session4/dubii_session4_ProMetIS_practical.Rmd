@@ -20,22 +20,24 @@ output:
 
 # Introduction
 
-Genes are pleiotropic and getting a better knowledge of their function requires a comprehensive characterization of their mutants. Within the *ProMetIS* project, a multi-level dataset has been generated, which combines phenomic, proteomic and metabolomic acquisitions from liver tissues of a mouse knock-out model lacking the *Lat* (linker for activation of T cells) gene [@Imbert_PrometisDeepPhenotyping_]. The data and processing code are publicly available in the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) R package to ensure accessibility, interoperability, and reusability.
+Genes are pleiotropic and getting a better knowledge of their function requires a comprehensive characterization of their mutants. Within the *ProMetIS* project, a multi-level dataset has been generated, which combines phenomic, proteomic and metabolomic acquisitions from liver tissues of a mouse knock-out model lacking the *Lat* (linker for activation of T cells) gene [@Imbert_PrometisDeepPhenotyping_2021]. The data and processing code are publicly available in the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) R package to ensure accessibility, interoperability, and reusability.
 
-Here, we propose to analyse this dataset and characterize the impact of the deletion of the *Lat* gene.
+Here, we propose to perform a statistical analysis of this dataset and characterize the impact of the deletion of the *Lat* gene.
 
-# Loading the data
+# Hands-on
 
-The multi-omics dataset is loaded as a MultiDataSet object.
+## Loading the dataset
+
+The multi-omics dataset is loaded from the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) package as a MultiDataSet object [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
 
 ```{r data_dir}
 lat_mset_dir.c <- ProMetIS::aggregated_dir.c("LAT")
 lat.mset <- phenomis::reading(lat_mset_dir.c, report.c = "none")
 ```
 
-Let us view the content of this dataset:
+Let us view the content of this multi-dataset:
 
-```{r}
+```{r lat_mset_show}
 lat.mset
 ```
 
@@ -51,18 +53,16 @@ lat.mset
 > 
 > * How many features?
 
-# Restricting to the liver (annotated) datasets
-
 We now restrict the dataset to the liver samples:
 
-```{r liver}
+```{r restrict_liver}
 # subsetting the MultiDataSet to the datasets containing 'liver' in their name
 latliv.mset <- lat.mset[, grep("liver", names(lat.mset), value = TRUE)]
 ```
 
 and to the annotated metabolomics features only:
 
-```{r}
+```{r restrict_annotated_metabo}
 # for each dataset
 for (set.c in grep("metabolomics", names(latliv.mset), value = TRUE)) {
 
@@ -85,10 +85,12 @@ for (set.c in grep("metabolomics", names(latliv.mset), value = TRUE)) {
 }
 ```
 
-Renaming the datasets
+We finally rename the datasets 'proteo', 'metabo_c18' and 'metabo_hilic':
 
-```{r}
+```{r rename_datasets}
 latliv_oldname.mset <- latliv.mset
+
+# creating a new MultiDataSet to store the renamed ExpressionSets
 latliv.mset <- MultiDataSet::createMultiDataSet()
 
 for (set.c in names(latliv_oldname.mset)) {
@@ -96,6 +98,7 @@ for (set.c in names(latliv_oldname.mset)) {
   # extracting the ExpressionSet
   eset <- latliv_oldname.mset[[set.c]]
 
+  # including the renamed ExpressionSet
   latliv.mset <- MultiDataSet::add_eset(latliv.mset,
                                         eset,
                                         dataset.type = switch(set.c,
@@ -107,11 +110,13 @@ for (set.c in names(latliv_oldname.mset)) {
                                         warnings = FALSE)
 
 }
+# re-ordering the datasets
 latliv.mset <- latliv.mset[, c("proteo", "metabo_c18", "metabo_hilic")]
 ```
 
+We have now the final multi-dataset which we will study in the rest of the session. Let us first have a look at the summary:
 
-```{r}
+```{r latliv_show}
 latliv.mset
 ```
 
@@ -127,12 +132,14 @@ latliv.mset
 > 
 > * How many features?
 
-# Data exploration (`phenomis::inspecting`)
+## Single-omics data exploration
 
-The phenomis::inspecting method applied to a MultiDataSet (or ExpressionSet) provides
-a numerical and graphical summary of the data:
+### Overview
 
-```{r}
+The `phenomis::inspecting` method from the [phenomis](https://github.com/SciDoPhenIA/phenomis) package applied to a *MultiDataSet* (or *ExpressionSet*) provides
+a numerical and graphical summary of each dataset:
+
+```{r inspecting}
 latliv.mset <- phenomis::inspecting(latliv.mset, report.c = "none")
 ```
 
@@ -149,11 +156,11 @@ latliv.mset <- phenomis::inspecting(latliv.mset, report.c = "none")
 > * Are there outliers?
 
 
-# Principal Component Analysis (`ropls::opls`)
+### Principal Component Analysis (PCA)
 
-We then focus on the Principal Component Analysis to see if we have clusters corresponding to the genotype.
+We continue our exploration of the individual datasets by focusing on the Principal Component Analysis.
 
-Building the PCA model:
+The `ropls::opls` method from the [ropls](https://www.bioconductor.org/packages/release/bioc/html/ropls.html) package enables to build the PCA models for each dataset from a *MultiDataSet* object [[@Thevenot_AnalysisHumanAdult_2015]](https://doi.org/10.1021/acs.jproteome.5b00354):
 
 ```{r pca_building}
 latliv.pca <- ropls::opls(latliv.mset, info.txtC = "none")
@@ -163,11 +170,12 @@ latliv.pca <- ropls::opls(latliv.mset, info.txtC = "none")
 > 
 > * For each dataset, how many components contribute to more than 10% of the total variance?
 
-Score-plot colored according to the genotype:
+Let us study if a separation between the genotypes is visible on the score-plot:
 
 ```{r pca_genotype}
 # getting the genotype info in the sampleMetadata from one of the dataset
 genotype.fc <- factor(Biobase::pData(latliv.mset[[names(latliv.mset)[1]]])[, "gene"])
+# coloring the score plot according to genotype
 ropls::plot(latliv.pca, typeVc = "x-score",
             parAsColFcVn = genotype.fc)
 ```
@@ -179,14 +187,33 @@ ropls::plot(latliv.pca, typeVc = "x-score",
 > * Which omic approach gives the best separation?
 >
 > * What happens with the protein data?
+>
+> * Is there any separation according to 'sex'?
 
-# Univariate Hypothesis Testing (`phenomis::hypotesting`)
+The MultiDataSet object with new columns for the PCA scores (respectively, loadings) included in the sampleMetadata (respectively, variableMetadata) can be extracted from the PCA model object with the `ropls::getMset` method: 
 
+```{r pca_getMset}
+latliv.mset <- ropls::getMset(latliv.pca)
+```
+
+### Univariate Hypothesis Testing
+
+We now would like to assess how much information about the *genotype* is contained in each block. We therefore perform a univariate analysis. Since we have observed that there is also a variation according to *sex* in the datasets, we want to test the effects of *gene*, *sex* and their interaction simultaneously.
+
+> _**Questions:**_
+> 
+> * What are the tests available with the `phenomis::hypotesting` method?
+>
+> * Which one would you suggest?
+>
+> * What kind of correction for multiple testing are available? What are the default method and threshold?
+
+We now perform a 2-way ANOVA with interaction, with the default Benjamini and Hochberg control of the False Discovery Rate at the 5% threshold [[@Benjamini_ControllingFalseDiscovery_1995]](http://www.jstor.org/stable/2346101).
 
 ```{r hypotesting}
 latliv.mset <- phenomis::hypotesting(latliv.mset,
                                      factor_names.vc = c("gene", "sex"),
-                                     test.c = "limma2waysInter",
+                                     test.c = "anova2waysInter",
                                      report.c = "none")
 ```
 
@@ -197,32 +224,58 @@ latliv.mset <- phenomis::hypotesting(latliv.mset,
 > * Are there features with significant difference between means according to the sex in all datasets?
 >
 > * Are there interactions between genotype and sex?
+>
+> * What would be the result of a single Student's t-test of a significant difference between means according to the genotype?
 
-# Multi-omics integration
+### Partial Least Squares - Discriminant Analysis (PLS-DA)
 
-## Multiple co-intertia analysis (**omicade4** package)
+Partial Least Squares - Discriminant Analysis is a machine learning approach which is popular in the field of multivariate analysis of mass spectrometry data [[@Trygg_ChemometricsMetabonomics_2007]](https://doi.org/10.1021/pr060594q). It is a latent variable approach based on the maximisation of the covariance between the components and the response [[@Wold_PlsRegressionBasic_2001]](https://doi.org/10.1016/S0169-7439(01)00155-1).
+
+The `ropls::opls` method from the [ropls](https://www.bioconductor.org/packages/release/bioc/html/ropls.html) package enables to build PLS models by specifying the response as the `y` parameter:
+
+```{r plsda}
+latliv.plsda <- ropls::opls(latliv.mset,
+                            y = "gene",
+                            info.txtC = "none")
+```
+
+> _**Questions:**_
+> 
+> * How many components were computed?
+>
+> * What does the top right graphic tell you? Are the models significant?
+>
+> * What is the predictive performance of the models?
+>
+> * Are the results in agreement with the univariate analysis?
+
+The MultiDataSet object with new columns for the PLS-DA scores (respectively, Variable Importance in Projection values) included in the sampleMetadata (respectively, variableMetadata) can be extracted from the PLS-DA model object with the `ropls::getMset` method: 
+
+```{r plsda_getMset}
+latliv.mset <- ropls::getMset(latliv.plsda)
+```
+
+Note: An Orthogonal Partial Least Squares - Discriminant Analysis (OPLS-DA) modeling can be performed with the method by setting the orthI argument to NA (instead of the 0 default value)
+
+```{r oplsda}
+latliv.oplsda <- ropls::opls(latliv.mset,
+                             y = "gene",
+                             orthoI = NA,
+                             info.txtC = "none")
+```
+
+## Multi-omics data integration
+
+Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138). Here we provide two examples of (unsupervised) multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and supervised multi-block PLS-DA [[@Rohart_MixomicsRPackage_2017]](https://doi.org/10.1371/journal.pcbi.1005752).
+
+### Multiple co-intertia analysis (MCIA)
 
 The following analysis is adapted from the [**omicade4** vignette](https://bioconductor.org/packages/release/bioc/vignettes/omicade4/inst/doc/omicade4.pdf) and the **Using MultiDataSet with third party R packages** additional file 2 [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
-
-Restricting the datasets to common samples:
-
-```{r mcia_common}
-latliv.mset <- MultiDataSet::commonSamples(latliv.mset)
-```
 
 Exporting the data matrices:
 
 ```{r mcia_data}
 latliv_mn.ls <- MultiDataSet::as.list(latliv.mset)
-```
-
-Replacing the "." by "_" in the metabolomics feature names (otherwise the names will be truncated during the call to mcia):
-
-```{r mcia_feature_names}
-latliv_mn.ls <- lapply(latliv_mn.ls, function(latliv.mn) {
-  rownames(latliv.mn) <- gsub(".", "_", rownames(latliv.mn), fixed = TRUE)
-  latliv.mn
-})
 ```
 
 Performing MCIA:
@@ -234,141 +287,241 @@ latliv.mcia <- omicade4::mcia(latliv_mn.ls)
 Plotting the results (samples are colored by genotype):
 
 ```{r mcia_plot}
-gene.vc <- Biobase::pData(latliv.mset)[["proteomics_liver"]][, "gene"]
+# gene.vc <- Biobase::pData(latliv.mset)[["proteomics_liver"]][, "gene"]
 require(ade4)
-omicade4::plot.mcia(latliv.mcia, axes = 1:2, phenovec = gene.vc, sample.lab = FALSE)
+omicade4::plot.mcia(latliv.mcia, axes = 1:2,
+                    phenovec = as.character(genotype.fc),
+                    sample.lab = FALSE)
 ```
 
-On the projection plot, axis 2 separates LAT and WT genotypes, whereas females and males are separated by axis 1.
+> _**Questions:**_
+> 
+> * Do you see any clustering of the two genotypes?
+>
+> * What about using the full metabolomics datasets (i.e., including also the non-annotated variables?)
+>
+> * Conclusion?
 
-Variables most contributing to axis 2 are metabolites:
+```{r mcia_full_metabo}
+# restricting the full LAT MultiDataSet to the liver datasets
+latliv_full.mset <- lat.mset[, grep("liver", names(lat.mset), value = TRUE)]
 
-```{r selectVar2}
-omicade4::selectVar(latliv.mcia, a1.lim = c(-Inf, Inf), a2.lim = c(2, Inf))
+# renaming the 3 datasets
+latliv_full_oldname.mset <- latliv_full.mset
+latliv_full.mset <- MultiDataSet::createMultiDataSet()
+for (set.c in names(latliv_full_oldname.mset)) {
+  eset <- latliv_full_oldname.mset[[set.c]]
+  latliv_full.mset <- MultiDataSet::add_eset(latliv_full.mset,
+                                        eset,
+                                        dataset.type = switch(set.c,
+                                                              proteomics_liver = "proteo",
+                                                              metabolomics_liver_c18hypersil_pos = "metabo_c18",
+                                                              metabolomics_liver_hilic_neg = "metabo_hilic"),
+                                        GRanges = NA,
+                                        overwrite = TRUE,
+                                        warnings = FALSE)
+
+}
+
+# re-ordering the datasets
+latliv_full.mset <- latliv_full.mset[, c("proteo", "metabo_c18", "metabo_hilic")]
+
+# MCIA modeling
+latliv_full_mn.ls <- MultiDataSet::as.list(latliv_full.mset)
+
+latliv_full.mcia <- omicade4::mcia(latliv_full_mn.ls)
+
+# MCIA results
+require(ade4)
+omicade4::plot.mcia(latliv_full.mcia, axes = 1:2,
+                    phenovec = as.character(genotype.fc),
+                    sample.lab = FALSE)
+
+# Note: the variables most contributing to the (second) axis may be viewed with:
+# omicade4::selectVar(latliv_full.mcia,
+#                     a1.lim = c(-Inf, Inf), a2.lim = c(1, Inf))
 ```
-Contribution to axis 1 also includes proteins:
 
-```{r selectVar1}
-omicade4::selectVar(latliv.mcia, a1.lim = c(2.5, Inf), a2.lim = c(-Inf, Inf))
-```
+### Multi-block sparse PLS-DA
 
-## The mixOmics software
+The *Data Integration Analysis for Biomarker discovery using a Latent component method for Omics studies (DIABLO)* method extends sparse PLS-Discriminant Analysis to multi-omics analyses [[@Singh_DiabloIntegrativeApproach_2019]](https://doi.org/10.1093/bioinformatics/bty1054). It is based on sparse generalized canonical correlation analysis (sGCCA) [[@Tenenhaus_VariableSelectionGeneralized_2014]](https://doi.org/10.1093/biostatistics/kxu001). sGCCA is a multivariate dimension reduction technique that uses singular value decomposition and selects co-expressed (correlated) variables from several omics datasets. sGCCA maximizes the covariance between linear combinations of variables (latent component scores). The selection of the correlated molecules across omics levels is performed internally in sGCCA with *L1*–penalization on the variable coefficient vector defining the linear combinations. To extend sGCCA for a classification framework, one omics dataset is substituted with a dummy indicator matrix Y. In  addition, the *L1* penalty parameter was replaced by the number of variables to select in each dataset and each component [[@Singh_DiabloIntegrativeApproach_2019]](https://doi.org/10.1093/bioinformatics/bty1054). The `mixOmics::block.splsda` is available in the [mixOmics](https://bioconductor.org/packages/release/bioc/html/mixOmics.html) package [@Rohart_MixomicsRPackage_2017](https://doi.org/10.1371/journal.pcbi.1005752).
 
-[@Rohart_MixomicsRPackage_2017](https://doi.org/10.1371/journal.pcbi.1005752)
+#### Building the model
 
-```{r data_import, message=FALSE}
+We first extract the list of (transposed) data matrices:
+
+```{r block_splsda_matrices}
 exprs.ls <- MultiDataSet::as.list(latliv.mset)
 texprs.ls <- lapply(exprs.ls, t)
+```
 
-## Design matrix
+We build the design matrix defining the link between the blocks. The weights were set to 0.1 between the blocks of omics and to 1 between the blocks of omics and the response block.
 
-# We create the design matrix. The weights were set to 0.1 between the blocks of omics and to 1 between the blocks of omics and the response block.
-
+```{r block_splsda_design}
 design.mn <- matrix(0.1,
                     ncol = length(exprs.ls),
                     nrow = length(exprs.ls), 
                     dimnames = list(names(exprs.ls),
                                     names(exprs.ls)))
-
 diag(design.mn) <- 0
+```
 
-varsel.ls <- list(proteo = c(20,20),
+We next determine the optimal number of components:
+
+```{r block_splsda_components}
+latliv_5comp.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
+                                                   Y = genotype.fc,
+                                                   design = design.mn,
+                                                   ncomp = 5)
+
+latliv_perf.blocksplsda <- mixOmics::perf(latliv_5comp.blocksplsda, validation = 'Mfold', folds = 5, nrepeat = 10)
+plot(latliv_perf.blocksplsda) 
+
+blocksplsda_comp.i <- latliv_perf.blocksplsda$choice.ncomp$WeightedVote["Overall.BER", "centroids.dist"]
+
+message("Number of selected components: ", blocksplsda_comp.i)
+```
+
+> _**Questions:**_
+> 
+> * How many components would you select?
+
+We now specify how many features are to be selected from each dataset for the 2 components by using cross-validation on a grid of values. Note: the code below will not be run in this session for the sake of time.
+
+```{r block_splsda_var_tune, eval = FALSE}
+# grid for variable selection
+varsel_grid.ls <- list(proteo = c(seq(20, 100, 10)),
+                       metabo_c18 = c(seq(10, 60, 10)),
+                       metabo_hilic = c(seq(10, 60, 10)))
+
+tune.blocksplsda = tune.block.splsda(X = texprs.ls,
+                                  Y = genotype.fc,
+                                  design = design.mn,
+                                  ncomp = blocksplsda_comp.i, 
+                                  test.keepX = varsel_grid.ls,
+                                  validation = 'Mfold',folds=5, nrepeat=50,
+                                  cpus = cpu, dist = "centroids.dist")
+
+# optimum
+varsel.ls = tune.blocksplsda$choice.keepX
+
+# number of selected for each block and components: 
+varsel.ls
+```
+
+```{r block_splsda_var_sel}
+varsel.ls <- list(proteo = c(20, 20),
                   metabo_c18 = c(10, 20),
                   metabo_hilic = c(60, 60))
-
-# list.keepX_FW = list()
-
-res.block.spls <- mixOmics::block.splsda(X = texprs.ls,
-                                         Y = genotype.fc,
-                                         design = design.mn,
-                                         scheme = 'horst',
-                                         keepX = varsel.ls)
 ```
 
-### Scores
+We can now build the model:
 
-```{r plotDiablo}
-mixOmics::plotDiablo(res.block.spls)
+```{r block_splsda_building, message=FALSE}
+latliv.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
+                                             Y = genotype.fc,
+                                             design = design.mn,
+                                             scheme = 'horst',
+                                             keepX = varsel.ls)
 ```
 
-### Loadings
+#### Interpreting the results
 
-```{r}
-mixOmics::plotLoadings(res.block.spls,
+Let us first look at the relationships between the components of the blocks:
+
+```{r block_splsda_scores}
+mixOmics::plotDiablo(latliv.blocksplsda)
+```
+
+the loadings:
+
+```{r block_splsda_loadings}
+mixOmics::plotLoadings(latliv.blocksplsda,
                        comp = 1,
                        legend.color = ProMetIS::palette.vc()[c("WT", "LAT")],
                        contrib = 'max', method = 'median')
 ```
 
-### Plot individuals
+the individuals:
 
-```{r plotIndiv}
-mixOmics::plotIndiv(res.block.spls,
-                                           ind.names = TRUE, 
-                                           legend = TRUE,
-                                           ellipse = TRUE,
-                                           col.per.group = ProMetIS::palette.vc()[c("WT", "LAT")])
+```{r block_splsda_indiv}
+mixOmics::plotIndiv(latliv.blocksplsda,
+                    ind.names = TRUE, 
+                    legend = TRUE,
+                    ellipse = TRUE,
+                    col.per.group = ProMetIS::palette.vc()[c("WT", "LAT")])
 ```
 
-```{r plotArrow}
-plot_arrow <- lapply(names(sgccda.ls),
-                     function(gene_tissue.c)
-                       mixOmics::plotArrow(sgccda.ls[[gene_tissue.c]][["block_splsda"]],
-                                           ind.names = FALSE, 
-                                           col = ProMetIS::palette.vc()[as.character(sgccda.ls[[gene_tissue.c]][["gene.fc"]])],
-                                           title = gene_tissue.c))
-```
+heatmap:
 
-### Plot variables
-
-```{r plotVar}
-mixOmics::plotVar(res.block.spls,
-                                       var.names = FALSE, 
-                                       style = 'graphics', 
-                                       legend = TRUE)
-```
-
-### Circos
-
-```{r circosPlot}
-mixOmics::circosPlot(res.block.spls,
-                                             cutoff = 0.7,
-                                             line = TRUE,
-                                             comp = 1,
-                                             color.Y = ProMetIS::palette.vc()[c("WT", "LAT")])
-
-```
-
-### Heatmap
-
-```{r cimDiablo}
-mixOmics::cimDiablo(res.block.spls,
-                    comp = 1,
-                    color.Y = ProMetIS::palette.vc()[c("WT", "LAT")])
+```{r block_splsda_heatmap, fig.width=10, fig.height=10, ppi=300}
+mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10,20),
+          color.Y = ProMetIS::palette.vc()[c("WT", "LAT")],
+          transpose=TRUE,comp=1,
+          size.legend = 0.6,  legend.position = "right")
 ```
 
 
-### Network
+```{r block_splsda_circos}
+mixOmics::circosPlot(latliv.blocksplsda,
+                     cutoff = 0.7,
+                     line = TRUE,
+                     comp = 1,
+                     color.Y = ProMetIS::palette.vc()[c("WT", "LAT")])
+```
+
+```{r graph_block_splsda_circos, fig.width = 10, fig.height = 10}
+latliv.network <- mixOmics::network(latliv.blocksplsda,
+                                    comp = list(proteo = 1,
+                                                metabo_c18 = 1,
+                                                metabo_hilic= 1),
+                                    shape.node = c("circle", "circle","circle"),
+                                    lty.edge = "solid",
+                                    lwd.edge = 3,
+                                    color.edge = mixOmics::color.spectral(50),
+                                    blocks = c(1,2,3), cutoff = 0.75)
+
+latliv.graph <- latliv.network$gR
+
+latliv.graph$layout <- igraph::layout.fruchterman.reingold(latliv.graph,
+                                                weights = (1 - abs(igraph::E(latliv.graph)$weight)))
+igraph::V(latliv.graph)$size <- 5
+
+plot(latliv.graph)
+
+knitr::kable(names(igraph::V(latliv.graph)))
+```
+
+Performance
 
 ```{r}
-mixOmics::network(res.block.spls,
-                                       color.node = c("#1F78B4", '#33A02C'),
-                                       shape.node = c("rectangle", "rectangle"),
-                                       lty.edge = "solid", lwd.edge =  1,
-                                       cutoff = 0.75)
+perf.blocksplsda <- mixOmics::perf(latliv.blocksplsda, validation = 'Mfold',
+                                   folds = 5, nrepeat = 10, 
+                                   dist = 'centroids.dist')
 ```
 
-### Integrating the variable selection results in the dataset
+* **Majority Vote**:
 
 ```{r}
+perf.blocksplsda$MajorityVote.error.rate
+```
 
+* **Weighted Vote**:
+
+```{r}
+perf.blocksplsda$WeightedVote.error.rate
+```
+
+Integrating the variable selection results in the dataset
+
+```{r}
 for (set.c in names(latliv.mset)) {
   
   eset <- latliv.mset[[set.c]]
   
   fdata.df <- Biobase::fData(eset)
     
-  loadings.ls <- res.block.spls[["loadings"]]
+  loadings.ls <- latliv.blocksplsda[["loadings"]]
   
   loadings.vn <- loadings.ls[[set.c]][, "comp1"]
   
@@ -397,6 +550,11 @@ for (set.c in names(latliv.mset)) {
 }
 ```
 
+## Saving the results
+
+```{r saving, eval = FALSE}
+phenomis::writing(latliv.mset, dir.c = "my_preferred_directory")
+```
 
 
 # Appendix
@@ -501,7 +659,7 @@ Creating a MultiDataSet with `MultiDataSet::createMultiDataSet`:
 ```{r mset_create}
 lat_dir.c <- ProMetIS::aggregated_dir.c("LAT")
 proteo.eset <- phenomis::reading(file.path(lat_dir.c, "proteomics_liver"), report.c = "none")
-metabo_c18.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_c18hyper_pos"), report.c = "none")
+metabo_c18.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_c18hypersil_pos"), report.c = "none")
 metabo_hilic.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_hilic_neg"), report.c = "none")
 
 latliv.mset <- MultiDataSet::createMultiDataSet()
@@ -511,7 +669,7 @@ latliv.mset <- MultiDataSet::add_eset(latliv.mset,
                                       GRanges = NA)
 latliv.mset <- MultiDataSet::add_eset(latliv.mset,
                                       metabo_c18.eset,
-                                      dataset.type = "metabolomics_liver_c18hyper_pos",
+                                      dataset.type = "metabolomics_liver_c18hypersil_pos",
                                       GRanges = NA)
 latliv.mset <- MultiDataSet::add_eset(latliv.mset,
                                       metabo_hilic.eset,
@@ -524,7 +682,7 @@ which is equivalent to:
 ```{r mset_read}
 latliv.mset <- phenomis::reading(lat_dir.c,
                                  subsets.vc = c("proteomics_liver",
-                                                "metabolomics_liver_c18hyper_pos",
+                                                "metabolomics_liver_c18hypersil_pos",
                                                 "metabolomics_liver_hilic_neg"),
                                  report.c = "none")
 ```
@@ -535,7 +693,7 @@ Brackets may be used to restrict the MultiDataSet to specific samples or dataset
 wt.mset <- latliv.mset[grep("W", Biobase::sampleNames(latliv.mset)[["proteomics_liver"]], value = TRUE), ]
 Biobase::dims(wt.mset)
 
-metabo.mset <- latliv.mset[, c("metabolomics_liver_c18hyper_pos", "metabolomics_liver_hilic_neg")]
+metabo.mset <- latliv.mset[, c("metabolomics_liver_c18hypersil_pos", "metabolomics_liver_hilic_neg")]
 names(metabo.mset)
 ```
 
