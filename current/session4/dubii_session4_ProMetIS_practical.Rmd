@@ -132,6 +132,24 @@ latliv.mset
 > 
 > * How many features?
 
+Note that the `phenomis::inspecting` method may be used to restrict the datasets to common samples only:
+
+```{r common_samples}
+latliv.mset <- MultiDataSet::commonSamples(latliv.mset)
+```
+
+Finally, we extract the vectors of the our two factors of interest: the 'gene' ('LAT' or 'WT') and 'sex' ('M' or 'F')
+
+```{r factors}
+# getting one of the sampleMetadata (e.g. the one from the 'proteo' dataset)
+pdata.df <- Biobase::pData(latliv.mset[["proteo"]])
+# getting the two vectors
+gene.vc <- pdata.df[, "gene"]
+print(table(gene.vc))
+sex.vc <- pdata.df[, "sex"]
+print(table(sex.vc))
+```
+
 ## Single-omics data exploration
 
 ### Overview
@@ -173,11 +191,8 @@ latliv.pca <- ropls::opls(latliv.mset, info.txtC = "none")
 Let us study if a separation between the genotypes is visible on the score-plot:
 
 ```{r pca_genotype}
-# getting the genotype info in the sampleMetadata from one of the dataset
-genotype.fc <- factor(Biobase::pData(latliv.mset[[names(latliv.mset)[1]]])[, "gene"])
-# coloring the score plot according to genotype
 ropls::plot(latliv.pca, typeVc = "x-score",
-            parAsColFcVn = genotype.fc)
+            parAsColFcVn = gene.vc)
 ```
 
 > _**Questions:**_
@@ -198,7 +213,7 @@ latliv.mset <- ropls::getMset(latliv.pca)
 
 ### Univariate Hypothesis Testing
 
-We now would like to assess how much information about the *genotype* is contained in each block. We therefore perform a univariate analysis. Since we have observed that there is also a variation according to *sex* in the datasets, we want to test the effects of *gene*, *sex* and their interaction simultaneously.
+We now would like to assess how much information about the *gene* is contained in each block. We therefore perform a univariate analysis. Since we have observed that there is also a variation according to *sex* in the datasets, we want to test the effects of *gene*, *sex* and their interaction simultaneously.
 
 > _**Questions:**_
 > 
@@ -266,11 +281,13 @@ latliv.oplsda <- ropls::opls(latliv.mset,
 
 ## Multi-omics data integration
 
-Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138). Here we provide two examples of (unsupervised) multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and supervised multi-block PLS-DA [[@Rohart_MixomicsRPackage_2017]](https://doi.org/10.1371/journal.pcbi.1005752).
+Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138)[[@Huang_MoreIsBetter_2017]](https://doi.org/10.3389/fgene.2017.00084). Here we provide two examples of (unsupervised) multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and supervised multi-block PLS-DA [[@Rohart_MixomicsRPackage_2017]](https://doi.org/10.1371/journal.pcbi.1005752).
 
 ### Multiple co-intertia analysis (MCIA)
 
-The following analysis is adapted from the [**omicade4** vignette](https://bioconductor.org/packages/release/bioc/vignettes/omicade4/inst/doc/omicade4.pdf) and the **Using MultiDataSet with third party R packages** additional file 2 [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
+Multiple Co-Inertia Analysis (MCIA) is a multi-omics exploratory data analysis technique [[@Meng_DimensionReductionTechniques_2016]](https://doi.org/10.1093/bib/bbv108). The datasets are projected into the same dimensional space by defining both 'global' and 'block-specific' scores (and loadings), and maximizing the sum squared covariance between them [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162). 
+
+#### Building the model
 
 Exporting the data matrices:
 
@@ -284,23 +301,24 @@ Performing MCIA:
 latliv.mcia <- omicade4::mcia(latliv_mn.ls)
 ```
 
+#### Interpreting the results
+
 Plotting the results (samples are colored by genotype):
 
 ```{r mcia_plot}
-# gene.vc <- Biobase::pData(latliv.mset)[["proteomics_liver"]][, "gene"]
 require(ade4)
 omicade4::plot.mcia(latliv.mcia, axes = 1:2,
-                    phenovec = as.character(genotype.fc),
+                    phenovec = gene.vc,
                     sample.lab = FALSE)
 ```
 
 > _**Questions:**_
-> 
+>
+> * What is shown by each graphic?
+>
 > * Do you see any clustering of the two genotypes?
->
-> * What about using the full metabolomics datasets (i.e., including also the non-annotated variables?)
->
-> * Conclusion?
+
+What about performing the same analysis with the full metabolomics datasets (i.e., including also the non-annotated variables?)
 
 ```{r mcia_full_metabo}
 # restricting the full LAT MultiDataSet to the liver datasets
@@ -334,12 +352,23 @@ latliv_full.mcia <- omicade4::mcia(latliv_full_mn.ls)
 # MCIA results
 require(ade4)
 omicade4::plot.mcia(latliv_full.mcia, axes = 1:2,
-                    phenovec = as.character(genotype.fc),
+                    phenovec = gene.vc,
                     sample.lab = FALSE)
 
 # Note: the variables most contributing to the (second) axis may be viewed with:
 # omicade4::selectVar(latliv_full.mcia,
 #                     a1.lim = c(-Inf, Inf), a2.lim = c(1, Inf))
+```
+> _**Questions:**_
+>
+> * Conclusion?
+>
+> * What about coloring the sample plot according to 'sex'?
+
+```{r mcia_full_metabo_sex}
+omicade4:::splot.sample.mcia(latliv_full.mcia,
+                    phenovec = sex.vc,
+                    sample.lab = FALSE)
 ```
 
 ### Multi-block sparse PLS-DA
