@@ -5,7 +5,7 @@ During this session, we will perform statistical analysis and integration of pro
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
 | Presentation |  | Slides (in progress) |  |
-| Practical | html (in progress) |  | [Rmd](dubii_session4_ProMetIS_practical.Rmd) |  |
+| Practical | [html](dubii_session4_ProMetIS_practical.html) |  | [Rmd](dubii_session4_ProMetIS_practical.Rmd) |  |
 
 *Trainer: Etienne A. Thévenot*
 
