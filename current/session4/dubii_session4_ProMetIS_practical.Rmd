@@ -26,6 +26,12 @@ Here, we propose to perform a statistical analysis of this dataset and character
 
 # Hands-on
 
+## Options
+
+```{r options}
+Sys.setlocale("LC_CTYPE", "French")
+```
+
 ## Loading the dataset
 
 The multi-omics dataset is loaded from the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) package as a MultiDataSet object [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
@@ -399,7 +405,7 @@ We next determine the optimal number of components:
 
 ```{r block_splsda_components}
 latliv_5comp.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
-                                                   Y = genotype.fc,
+                                                   Y = factor(gene.vc),
                                                    design = design.mn,
                                                    ncomp = 5)
 
@@ -424,7 +430,7 @@ varsel_grid.ls <- list(proteo = c(seq(20, 100, 10)),
                        metabo_hilic = c(seq(10, 60, 10)))
 
 tune.blocksplsda = tune.block.splsda(X = texprs.ls,
-                                  Y = genotype.fc,
+                                  Y = factor(gene.vc),
                                   design = design.mn,
                                   ncomp = blocksplsda_comp.i, 
                                   test.keepX = varsel_grid.ls,
@@ -448,7 +454,7 @@ We can now build the model:
 
 ```{r block_splsda_building, message=FALSE}
 latliv.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
-                                             Y = genotype.fc,
+                                             Y = factor(gene.vc),
                                              design = design.mn,
                                              scheme = 'horst',
                                              keepX = varsel.ls)
@@ -456,22 +462,11 @@ latliv.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
 
 #### Interpreting the results
 
-Let us first look at the relationships between the components of the blocks:
+##### Within blocks
 
-```{r block_splsda_scores}
-mixOmics::plotDiablo(latliv.blocksplsda)
-```
+We first look at the individual blocks.
 
-the loadings:
-
-```{r block_splsda_loadings}
-mixOmics::plotLoadings(latliv.blocksplsda,
-                       comp = 1,
-                       legend.color = ProMetIS::palette.vc()[c("WT", "LAT")],
-                       contrib = 'max', method = 'median')
-```
-
-the individuals:
+###### Samples
 
 ```{r block_splsda_indiv}
 mixOmics::plotIndiv(latliv.blocksplsda,
@@ -481,15 +476,39 @@ mixOmics::plotIndiv(latliv.blocksplsda,
                     col.per.group = ProMetIS::palette.vc()[c("WT", "LAT")])
 ```
 
-heatmap:
+> _**Questions:**_
+> 
+> * How do you interpret the results?
 
-```{r block_splsda_heatmap, fig.width=10, fig.height=10, ppi=300}
-mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10,20),
-          color.Y = ProMetIS::palette.vc()[c("WT", "LAT")],
-          transpose=TRUE,comp=1,
-          size.legend = 0.6,  legend.position = "right")
+###### Variables
+
+```{r block_splsda_loadings}
+mixOmics::plotLoadings(latliv.blocksplsda,
+                       comp = 1,
+                       legend.color = ProMetIS::palette.vc()[c("WT", "LAT")],
+                       contrib = 'max',
+                       method = 'median')
 ```
 
+> _**Questions:**_
+> 
+> * How do you interpret the results?
+
+##### Between blocks
+
+Let us look at the relationships between the block components.
+
+###### Samples
+
+```{r block_splsda_sample_plot}
+mixOmics::plotDiablo(latliv.blocksplsda)
+```
+
+> _**Questions:**_
+> 
+> * How do you interpret the results?
+
+###### Variables
 
 ```{r block_splsda_circos}
 mixOmics::circosPlot(latliv.blocksplsda,
@@ -499,16 +518,20 @@ mixOmics::circosPlot(latliv.blocksplsda,
                      color.Y = ProMetIS::palette.vc()[c("WT", "LAT")])
 ```
 
-```{r graph_block_splsda_circos, fig.width = 10, fig.height = 10}
+> _**Questions:**_
+> 
+> * How do you interpret the results?
+
+```{r graph_block_splsda_network, fig.width = 10, fig.height = 10}
 latliv.network <- mixOmics::network(latliv.blocksplsda,
                                     comp = list(proteo = 1,
                                                 metabo_c18 = 1,
                                                 metabo_hilic= 1),
-                                    shape.node = c("circle", "circle","circle"),
+                                    shape.node = rep("circle", 3),
                                     lty.edge = "solid",
                                     lwd.edge = 3,
                                     color.edge = mixOmics::color.spectral(50),
-                                    blocks = c(1,2,3), cutoff = 0.75)
+                                    blocks = c(1, 2, 3), cutoff = 0.75)
 
 latliv.graph <- latliv.network$gR
 
@@ -518,32 +541,44 @@ igraph::V(latliv.graph)$size <- 5
 
 plot(latliv.graph)
 
-knitr::kable(names(igraph::V(latliv.graph)))
+# knitr::kable(names(igraph::V(latliv.graph)))
 ```
 
-Performance
+> _**Questions:**_
+> 
+> * What biological interpretation(s) would you suggest?
 
-```{r}
+###### Samples and variables
+
+```{r block_splsda_heatmap, fig.width=10, fig.height=10}
+heatmap.mn <- mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10, 20),
+                    color.Y = ProMetIS::palette.vc()[c("WT", "LAT")],
+                    transpose = TRUE, comp = 1,
+                    size.legend = 0.6,  legend.position = "right")
+```
+
+> _**Questions:**_
+>
+> * What kind of clustering is used?
+>
+> * What additional information is provided by this graphic?
+
+##### Model Performance
+
+```{r model_performance}
 perf.blocksplsda <- mixOmics::perf(latliv.blocksplsda, validation = 'Mfold',
                                    folds = 5, nrepeat = 10, 
-                                   dist = 'centroids.dist')
+                                   dist = 'centroids.dist', auc = TRUE)
+plot(perf.blocksplsda)
+message("Error rate:")
+print(perf.blocksplsda$error.rate)
+message("AUC:")
+print(perf.blocksplsda$auc)
 ```
 
-* **Majority Vote**:
+#### Including the variable selection results into the MultiDataSet
 
-```{r}
-perf.blocksplsda$MajorityVote.error.rate
-```
-
-* **Weighted Vote**:
-
-```{r}
-perf.blocksplsda$WeightedVote.error.rate
-```
-
-Integrating the variable selection results in the dataset
-
-```{r}
+```{r mixomics_to_mset}
 for (set.c in names(latliv.mset)) {
   
   eset <- latliv.mset[[set.c]]
