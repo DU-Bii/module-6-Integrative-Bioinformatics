@@ -2,9 +2,9 @@
         
 | Contenu | HTML | pdf | Rmd | R |
 |--------------------------------------------------|------|------|-----|-----|
-| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](../../2020/session1-2/DUBii_SD_JM.pdf) |  |
-| MixOmics |  | [Slides](../../2020/session1-2/slide_mixOmics_2018.pdf) |  | [R](../../2020/session1-2/TP_mixOmics_DUBii.R) |
-| Practical mixKernel | [html](../../2020/session1-2/TP_mixKernel_DUBii.html) |  | [Rmd](../../2020/session1-2/TP_mixKernel_DUBii.Rmd) |
+| Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](https://synapse.math.univ-toulouse.fr/s/MwI9AkY301X4xGC#pdfviewer) |  |
+| MixOmics |  |  |  | [R](../../2020/session1-2/TP_mixOmics_DUBii.R) |
+<!---| Practical mixKernel | [html](../../2020/session1-2/TP_mixKernel_DUBii.html) |  | [Rmd](../../2020/session1-2/TP_mixKernel_DUBii.Rmd) |--->
 
 *Teachers: Sébastien Déjean, Jérôme Mariette*
 
