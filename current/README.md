@@ -6,7 +6,7 @@
 ## Access to training material
 
 <!--- - Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/2021/>--->
-- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/current/>
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/tree/master/current>
 
 
 ## Teaching material
