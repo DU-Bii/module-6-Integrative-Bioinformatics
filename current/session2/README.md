@@ -4,7 +4,7 @@
 |--------------------------------------------------|------|------|-----|-----|
 | Presentation Sébastien Dejean et Jérôme Mariette |  | [Slides](https://synapse.math.univ-toulouse.fr/s/MwI9AkY301X4xGC#pdfviewer) |  |
 | MixOmics |  |  |  | [R](DUBii_TP_mixOmics.R) |
-<!---| Practical mixKernel | [html](../../2020/session1-2/TP_mixKernel_DUBii.html) |  | [Rmd](../../current/session2/DUBii_TP_mixOmics.R) |--->
+| Practical mixKernel | [html](../../2020/session1-2/TP_mixKernel_DUBii.html) |  | [Rmd](../../2020/session1-2/TP_mixKernel_DUBii.Rmd) |
 
 *Teachers: Sébastien Déjean, Jérôme Mariette*
 
