@@ -5,8 +5,8 @@
 
 ## Access to training material
 
-- Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/2021/>
-- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/2021/>
+<!--- - Web: <https://du-bii.github.io/module-6-Integrative-Bioinformatics/2021/>--->
+- Github (sources): <https://github.com/DU-Bii/module-6-Integrative-Bioinformatics/tree/master/current>
 
 
 ## Teaching material
@@ -125,9 +125,9 @@ Datasets:
  A document to familiarise with the terminology of correlation networks and WGCNA can be found [here](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf)
 
 - Practical with R
-    - Inferrence of co-expression networks with the WGCNA package
+  - Inferrence of co-expression networks with the WGCNA package
 
- The document containing the R code for the TP, together with explanations and output graphs can is here: [Network_Inference_with_WGCNA.html](../2020/session5/Network_Inference_with_WGCNA.html)
+  Document containing R code for the TP, together with explanations and output graphs can be here: [Network_Inference_with_WGCNA.html](../2020/session5/Network_Inference_with_WGCNA.html)
 
 
 Conclusions and mentions of Inferelator and cMonkey, two network inference tools which combine RNA-seq and Chip-Seq data.
@@ -152,7 +152,7 @@ Conclusions and mentions of Inferelator and cMonkey, two network inference tools
 3. [Jérôme Mariette](https://orcid.org/0000-0002-6161-4044)
 4. [Alban Gaignard](https://orcid.org/0000-0002-3597-8557)
 5. [Etienne Thévenot](https://orcid.org/0000-0003-1019-4577)
-6. [Costas Bouyioukos](https://orcid.org/0000-0002-7443-3736)
+6. [Costas Bouyioukos](https://www.linkedin.com/in/costasbouyioukos)
 7. [Claire Lansonneur](https://fr.linkedin.com/in/claire-lansonneur)
 
 ----------------------------------------------------------------
