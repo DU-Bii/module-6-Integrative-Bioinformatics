@@ -8,7 +8,7 @@ Session 2021
 - Practical with Cytoscape
     - Basics on human interactome
     - Keywords: interactome, network visualisation and topological analyses
-    - Practicals: [Tuto](../../2020/session3/TPCytoscape.pdf)
+    - Practicals: [Tuto](../../current/session5/TPCytoscape.pdf)
 
 
 Videos and slide year 2020
