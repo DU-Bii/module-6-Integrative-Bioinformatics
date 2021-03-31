@@ -287,7 +287,7 @@ latliv.oplsda <- ropls::opls(latliv.mset,
 
 ## Multi-omics data integration
 
-Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138)[[@Huang_MoreIsBetter_2017]](https://doi.org/10.3389/fgene.2017.00084). Here we provide two examples of (unsupervised) multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and supervised multi-block PLS-DA [[@Rohart_MixomicsRPackage_2017]](https://doi.org/10.1371/journal.pcbi.1005752).
+Many statistical approaches are available for integrative analysis of multi-omics datasets [[@PierreJean_ClusteringVariableSelection_2019]](https://doi.org/10.1093/bib/bbz138)[[@Huang_MoreIsBetter_2017]](https://doi.org/10.3389/fgene.2017.00084)[[@Cantini_BenchmarkingJointMulti_2021]](https://doi.org/10.1038/s41467-020-20430-7). Here we provide two examples of (unsupervised) multiple co-inertia analysis [[@Meng_MultivariateApproachIntegration_2014]](https://doi.org/10.1186/1471-2105-15-162) and supervised multi-block PLS-DA [[@Rohart_MixomicsRPackage_2017]](https://doi.org/10.1371/journal.pcbi.1005752).
 
 ### Multiple co-intertia analysis (MCIA)
 
