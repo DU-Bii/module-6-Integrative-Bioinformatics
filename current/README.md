@@ -119,15 +119,15 @@ Datasets:
   - Introduction to gene co-expression networks.
   - Introduction to WGCNA and the concept of eigengenes.
   - Introduction: inferring networks from \*omics data, clustering for Gene Regulatory Networks.
-    - Slides: [SLidesM6S5](../2020/session5/WGCNA_seance5.pdf)
+    - Slides: [SLidesM6S5](../2020/session5/WGCNA_seance5.pdf).
 
-Before the TP: Must read [this](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf) document to familiarise with the terminology of correlation networks and WGCNA 
+Before the TP: Must read [this](https://horvath.genetics.ucla.edu/html/CoexpressionNetwork/Rpackages/WGCNA/Tutorials/Simulated-00-Background.pdf) document to familiarise with the terminology of correlation networks and WGCNA.
 
-- Particulars [please read here](session6/README.md)
+- Particulars [please read here](session6/README.md).
 
 - Practical with R
-  - Inferrence of co-expression network modules with the WGCNA package
-  - Document containing R code for the TP, together with explanations and output graphs can be here: [Network Inference with WGCNA](session6/Network_Inference_with_WGCNA.r)
+  - Inferrence of co-expression network modules with the WGCNA package.
+  - Document containing all the R code for the TP [Network Inference with WGCNA R](session6/Network_Inference_with_WGCNA.r) and a notebook with explanations and output graphs [Network Inference with WGCNA notebook](session6/Network_Inference_with_WGCNA.ipynb).
 
 
 ----------------------------------------------------------------
