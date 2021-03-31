@@ -127,7 +127,7 @@ Before the TP: Must read [this](https://horvath.genetics.ucla.edu/html/Coexpress
 
 - Practical with R
   - Inferrence of co-expression network modules with the WGCNA package
-  - Document containing R code for the TP, together with explanations and output graphs can be here: [Network Inference with WGCNA.r](session6/Network Inference with WGCNA.r)
+  - Document containing R code for the TP, together with explanations and output graphs can be here: [Network Inference with WGCNA](session6/Network Inference with WGCNA.r)
 
 
 ----------------------------------------------------------------
