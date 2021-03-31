@@ -3,7 +3,7 @@
 *Teachers: Anaïs Baudot*
 
 Session 2021
-- [Slides] (./NetworkBiology.pdf)
+- [Slides] (../../current/session5/NetworkBiology.pdf)
 
 - Practical with Cytoscape
     - Basics on human interactome
