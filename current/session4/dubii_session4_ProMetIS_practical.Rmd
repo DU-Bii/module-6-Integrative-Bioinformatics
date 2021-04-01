@@ -429,7 +429,7 @@ varsel_grid.ls <- list(proteo = c(seq(20, 100, 10)),
                        metabo_c18 = c(seq(10, 60, 10)),
                        metabo_hilic = c(seq(10, 60, 10)))
 
-tune.blocksplsda = tune.block.splsda(X = texprs.ls,
+tune.blocksplsda = mixOmics::tune.block.splsda(X = texprs.ls,
                                   Y = factor(gene.vc),
                                   design = design.mn,
                                   ncomp = blocksplsda_comp.i, 
