@@ -4,4 +4,4 @@ channels:
 dependencies:
   - rdflib
   - jupyter
-  - python==3.7
+  - python==3.9
