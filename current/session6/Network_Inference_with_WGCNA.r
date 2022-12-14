@@ -190,6 +190,19 @@ probes2annot = match(probes, annot$substanceBXH)
 sum(is.na(probes2annot))
 # Should return 0.
 
+
+weight = as.data.frame(datTraits$weight_g);
+geneModuleMembership = as.data.frame(cor(datExpr, MEs, use = "p"));
+MMPvalue = as.data.frame(corPvalueStudent(as.matrix(geneModuleMembership), nSamples));
+modNames = substring(names(MEs), 3);
+names(geneModuleMembership) = paste("MM", modNames, sep="");
+names(MMPvalue) = paste("p.MM", modNames, sep="");
+geneTraitSignificance = as.data.frame(cor(datExpr, weight, use = "p"));
+GSPvalue = as.data.frame(corPvalueStudent(as.matrix(geneTraitSignificance), nSamples));
+names(geneTraitSignificance) = paste("GS.", names(weight), sep="");
+names(GSPvalue) = paste("p.GS.", names(weight), sep="");
+
+
 #  Code chunk 20
 # Create the starting data frame
 geneInfo0 = data.frame(substanceBXH = probes,
@@ -210,7 +223,7 @@ for (mod in 1:ncol(geneModuleMembership))
                        paste("p.MM.", modNames[modOrder[mod]], sep=""))
 }
 # Order the genes in the geneInfo variable first by module color, then by geneTraitSignificance
-geneOrder = order(geneInfo0$moduleColor, -abs(geneInfo0$GS.weight));
+geneOrder = order(geneInfo0$moduleColor, -abs(geneInfo0$GS.datTraits.weight_g));
 geneInfo = geneInfo0[geneOrder, ]
 
 #  Code chunk 21

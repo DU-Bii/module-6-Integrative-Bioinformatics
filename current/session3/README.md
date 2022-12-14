@@ -1,5 +1,5 @@
 # Session 3: Semantic Web and knowledge graphs
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/master?filepath=2020%2Fsession4)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/HEAD?filepath=%2Fcurrent%2Fsession3)
 
 *Teacher: Alban Gaignard (alban.gaignard@univ-nantes.fr)*
 
@@ -18,9 +18,9 @@ Pen and paper will also be very important to draw knowledge graphs and draft gra
 A basic python environment is enough to code. A convenient way of setting it up is to configure a conda environment. 
 As soon as `conda` is installed on your machine, use the following commands to install `RDFlib` and `Jupyter` packages. 
 ```
-conda create --name dubii python=3.7 rdflib jupyter -c conda-forge
+conda create --name dubii python=3.9 rdflib jupyter -c conda-forge
 ```
 
-If you have troubles with `conda`, click on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/master?filepath=2020%2Fsession4). This will launch a "virtual machine" on the cloud and give you an interactive Jupyter environment. 
+If you have troubles with `conda`, click on [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/DU-Bii/module-6-Integrative-Bioinformatics/HEAD?filepath=%2Fcurrent%2Fsession3). This will launch a "virtual machine" on the cloud and give you an interactive Jupyter environment. 
 
 See you soon on Wednesday 31/03 at 9:30 ! 
