@@ -38,7 +38,7 @@ The multi-omics dataset is loaded from the [ProMetIS](https://github.com/IFB-Eli
 
 ```{r data_dir}
 lat_mset_dir.c <- ProMetIS::aggregated_dir.c("LAT")
-lat.mset <- phenomis::reading(lat_mset_dir.c, report.c = "none")
+lat.mset <- phenomis::reading(lat_mset_dir.c, report.c = "none", output.c = "set")
 ```
 
 Let us view the content of this multi-dataset:
@@ -684,7 +684,7 @@ latlivprot.eset <- Biobase::ExpressionSet(assayData = dataMatrix.mn,
 which is equivalent to:
 
 ```{r eset_read}
-latlivprot.eset <- phenomis::reading(latlivprot_dir.c)
+latlivprot.eset <- phenomis::reading(latlivprot_dir.c, output.c = "set")
 ```
 
 Brackets may be used to restrict the ExpressionSet to specific sample or features:
@@ -722,9 +722,12 @@ Creating a MultiDataSet with `MultiDataSet::createMultiDataSet`:
 
 ```{r mset_create}
 lat_dir.c <- ProMetIS::aggregated_dir.c("LAT")
-proteo.eset <- phenomis::reading(file.path(lat_dir.c, "proteomics_liver"), report.c = "none")
-metabo_c18.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_c18hypersil_pos"), report.c = "none")
-metabo_hilic.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_hilic_neg"), report.c = "none")
+proteo.eset <- phenomis::reading(file.path(lat_dir.c, "proteomics_liver"),
+                                 report.c = "none", output.c = "set")
+metabo_c18.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_c18hypersil_pos"),
+                                     report.c = "none", output.c = "set")
+metabo_hilic.eset <- phenomis::reading(file.path(lat_dir.c, "metabolomics_liver_hilic_neg"),
+                                       report.c = "none", output.c = "set")
 
 latliv.mset <- MultiDataSet::createMultiDataSet()
 latliv.mset <- MultiDataSet::add_eset(latliv.mset,
@@ -748,7 +751,8 @@ latliv.mset <- phenomis::reading(lat_dir.c,
                                  subsets.vc = c("proteomics_liver",
                                                 "metabolomics_liver_c18hypersil_pos",
                                                 "metabolomics_liver_hilic_neg"),
-                                 report.c = "none")
+                                 report.c = "none",
+                                 output.c = "set")
 ```
 
 Brackets may be used to restrict the MultiDataSet to specific samples or datasets:
