@@ -34,10 +34,16 @@ Sys.setlocale("LC_CTYPE", "French")
 
 ## Loading the dataset
 
-The multi-omics dataset is loaded from the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) package as a MultiDataSet object [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1).
+The multi-omics dataset is stored in the [ProMetIS](https://github.com/IFB-ElixirFr/ProMetIS) package as three tabulated files (*dataMatrix.tsv*, *sampleMetadata.tsv*, and *variableMetadata.tsv*) for each of the 9 datasets (see the Appendix section below):
+
+```{r}
+lat_mset_dir.c <- ProMetIS::aggregated_dir.c("LAT")
+```
+
+The whole multi-omics dataset can be loaded as a `MultiDataSet` object [[@HernandezFerrer_MultidatasetRPackage_2017]](https://doi.org/10.1186/s12859-016-1455-1),
+by using the `phenomis::reading` method from the [phenomis](https://bioconductor.org/packages/phenomis/) package [@Imbert_PrometisDeepPhenotyping_2021]:
 
 ```{r data_dir}
-lat_mset_dir.c <- ProMetIS::aggregated_dir.c("LAT")
 lat.mset <- phenomis::reading(lat_mset_dir.c, report.c = "none", output.c = "set")
 ```
 
@@ -409,7 +415,8 @@ latliv_5comp.blocksplsda <- mixOmics::block.splsda(X = texprs.ls,
                                                    design = design.mn,
                                                    ncomp = 5)
 
-latliv_perf.blocksplsda <- mixOmics::perf(latliv_5comp.blocksplsda, validation = 'Mfold', folds = 5, nrepeat = 10)
+latliv_perf.blocksplsda <- mixOmics::perf(latliv_5comp.blocksplsda,
+                                          validation = 'Mfold', folds = 5, nrepeat = 10)
 plot(latliv_perf.blocksplsda) 
 
 blocksplsda_comp.i <- latliv_perf.blocksplsda$choice.ncomp$WeightedVote["Overall.BER", "centroids.dist"]
@@ -488,11 +495,15 @@ mixOmics::plotLoadings(latliv.blocksplsda,
                        legend.color = ProMetIS::palette.vc()[c("LAT", "WT")],
                        contrib = 'max',
                        method = 'median')
+
+# lapply(within(mixOmics::selectVar(latliv.blocksplsda), rm(comp)),
+#        function(block_sel.ls) block_sel.ls[["name"]])
 ```
 
 > _**Questions:**_
 > 
 > * How do you interpret the results?
+
 
 ##### Between blocks
 
@@ -526,7 +537,7 @@ mixOmics::circosPlot(latliv.blocksplsda,
 latliv.network <- mixOmics::network(latliv.blocksplsda,
                                     comp = list(proteo = 1,
                                                 metabo_c18 = 1,
-                                                metabo_hilic= 1),
+                                                metabo_hilic = 1),
                                     shape.node = rep("circle", 3),
                                     lty.edge = "solid",
                                     lwd.edge = 3,
@@ -551,10 +562,11 @@ plot(latliv.graph)
 ###### Samples and variables
 
 ```{r block_splsda_heatmap, fig.width=10, fig.height=10}
-heatmap.mn <- mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10, 20),
+heatmap.ls <- mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10, 20),
                     color.Y = ProMetIS::palette.vc()[c("LAT", "WT")],
                     transpose = TRUE, comp = 1,
-                    size.legend = 0.6,  legend.position = "right")
+                    size.legend = 0.6,  legend.position = "right",
+                    dist.method = c("correlation", "correlation"))
 ```
 
 > _**Questions:**_
