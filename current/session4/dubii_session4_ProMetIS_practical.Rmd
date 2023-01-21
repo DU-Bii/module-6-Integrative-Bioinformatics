@@ -160,7 +160,7 @@ print(table(sex.vc))
 
 ### Overview
 
-The `phenomis::inspecting` method from the [phenomis](https://github.com/SciDoPhenIA/phenomis) package applied to a *MultiDataSet* (or *ExpressionSet*) provides
+The `phenomis::inspecting` method from the [phenomis](https://bioconductor.org/packages/phenomis/) package applied to a *MultiDataSet* (or *ExpressionSet*) provides
 a numerical and graphical summary of each dataset:
 
 ```{r inspecting}
@@ -184,7 +184,7 @@ latliv.mset <- phenomis::inspecting(latliv.mset, report.c = "none")
 
 We continue our exploration of the individual datasets by focusing on the Principal Component Analysis.
 
-The `ropls::opls` method from the [ropls](https://www.bioconductor.org/packages/release/bioc/html/ropls.html) package enables to build the PCA models for each dataset from a *MultiDataSet* object [[@Thevenot_AnalysisHumanAdult_2015]](https://doi.org/10.1021/acs.jproteome.5b00354):
+The `ropls::opls` method from the [ropls](https://www.bioconductor.org/packages/ropls/) package enables to build the PCA models for each dataset from a *MultiDataSet* object [[@Thevenot_AnalysisHumanAdult_2015]](https://doi.org/10.1021/acs.jproteome.5b00354):
 
 ```{r pca_building}
 latliv.pca <- ropls::opls(latliv.mset, info.txtC = "none")
@@ -473,7 +473,7 @@ mixOmics::plotIndiv(latliv.blocksplsda,
                     ind.names = TRUE, 
                     legend = TRUE,
                     ellipse = TRUE,
-                    col.per.group = ProMetIS::palette.vc()[c("WT", "LAT")])
+                    col.per.group = ProMetIS::palette.vc()[c("LAT", "WT")])
 ```
 
 > _**Questions:**_
@@ -485,7 +485,7 @@ mixOmics::plotIndiv(latliv.blocksplsda,
 ```{r block_splsda_loadings}
 mixOmics::plotLoadings(latliv.blocksplsda,
                        comp = 1,
-                       legend.color = ProMetIS::palette.vc()[c("WT", "LAT")],
+                       legend.color = ProMetIS::palette.vc()[c("LAT", "WT")],
                        contrib = 'max',
                        method = 'median')
 ```
@@ -515,7 +515,7 @@ mixOmics::circosPlot(latliv.blocksplsda,
                      cutoff = 0.7,
                      line = TRUE,
                      comp = 1,
-                     color.Y = ProMetIS::palette.vc()[c("WT", "LAT")])
+                     color.Y = ProMetIS::palette.vc()[c("LAT", "WT")])
 ```
 
 > _**Questions:**_
@@ -552,7 +552,7 @@ plot(latliv.graph)
 
 ```{r block_splsda_heatmap, fig.width=10, fig.height=10}
 heatmap.mn <- mixOmics::cimDiablo(latliv.blocksplsda, margins = c(10, 20),
-                    color.Y = ProMetIS::palette.vc()[c("WT", "LAT")],
+                    color.Y = ProMetIS::palette.vc()[c("LAT", "WT")],
                     transpose = TRUE, comp = 1,
                     size.legend = 0.6,  legend.position = "right")
 ```
